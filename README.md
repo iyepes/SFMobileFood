@@ -1,5 +1,6 @@
 # 
 Swift app using Open Data to show Food trucks in San Francisco city.
+Data located at https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat
 
 SFMobileFood
 ============
