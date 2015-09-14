@@ -13,6 +13,14 @@
 		F85DA8331BA6159800744EFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85DA8321BA6159800744EFD /* Images.xcassets */; };
 		F85DA8361BA6159800744EFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85DA8341BA6159800744EFD /* LaunchScreen.xib */; };
 		F85DA8421BA6159900744EFD /* SFMobileFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8411BA6159900744EFD /* SFMobileFoodTests.swift */; };
+		F85DA84C1BA6182B00744EFD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA84B1BA6182B00744EFD /* CFNetwork.framework */; };
+		F85DA84E1BA6183500744EFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA84D1BA6183500744EFD /* CoreLocation.framework */; };
+		F85DA8501BA6187A00744EFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA84F1BA6187A00744EFD /* Foundation.framework */; };
+		F85DA8521BA6188600744EFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8511BA6188600744EFD /* MapKit.framework */; };
+		F85DA8541BA6189200744EFD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8531BA6189200744EFD /* MobileCoreServices.framework */; };
+		F85DA8561BA6189E00744EFD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8551BA6189E00744EFD /* Security.framework */; };
+		F85DA8581BA618AB00744EFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */; };
+		F85DA85A1BA618B800744EFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8591BA618B800744EFD /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,14 @@
 		F85DA83B1BA6159900744EFD /* SFMobileFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFMobileFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85DA8401BA6159900744EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85DA8411BA6159900744EFD /* SFMobileFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMobileFoodTests.swift; sourceTree = "<group>"; };
+		F85DA84B1BA6182B00744EFD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F85DA84D1BA6183500744EFD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F85DA84F1BA6187A00744EFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F85DA8511BA6188600744EFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F85DA8531BA6189200744EFD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F85DA8551BA6189E00744EFD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F85DA8591BA618B800744EFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85DA85A1BA618B800744EFD /* UIKit.framework in Frameworks */,
+				F85DA8581BA618AB00744EFD /* SystemConfiguration.framework in Frameworks */,
+				F85DA8561BA6189E00744EFD /* Security.framework in Frameworks */,
+				F85DA8541BA6189200744EFD /* MobileCoreServices.framework in Frameworks */,
+				F85DA8521BA6188600744EFD /* MapKit.framework in Frameworks */,
+				F85DA8501BA6187A00744EFD /* Foundation.framework in Frameworks */,
+				F85DA84E1BA6183500744EFD /* CoreLocation.framework in Frameworks */,
+				F85DA84C1BA6182B00744EFD /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +83,14 @@
 		F85DA81D1BA6159800744EFD = {
 			isa = PBXGroup;
 			children = (
+				F85DA8591BA618B800744EFD /* UIKit.framework */,
+				F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */,
+				F85DA8551BA6189E00744EFD /* Security.framework */,
+				F85DA8531BA6189200744EFD /* MobileCoreServices.framework */,
+				F85DA8511BA6188600744EFD /* MapKit.framework */,
+				F85DA84F1BA6187A00744EFD /* Foundation.framework */,
+				F85DA84D1BA6183500744EFD /* CoreLocation.framework */,
+				F85DA84B1BA6182B00744EFD /* CFNetwork.framework */,
 				F85DA8281BA6159800744EFD /* SFMobileFood */,
 				F85DA83E1BA6159900744EFD /* SFMobileFoodTests */,
 				F85DA8271BA6159800744EFD /* Products */,
