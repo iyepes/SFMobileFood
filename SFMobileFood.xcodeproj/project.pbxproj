@@ -21,6 +21,11 @@
 		F85DA8561BA6189E00744EFD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8551BA6189E00744EFD /* Security.framework */; };
 		F85DA8581BA618AB00744EFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */; };
 		F85DA85A1BA618B800744EFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8591BA618B800744EFD /* UIKit.framework */; };
+		F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA85F1BA698D800744EFD /* MapViewController.swift */; };
+		F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8611BA6991A00744EFD /* QueryViewController.swift */; };
+		F85DA8E51BA6A48A00744EFD /* SODAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8E41BA6A48A00744EFD /* SODAKit.framework */; };
+		F85DA8EA1BA6A4CA00744EFD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F85DA8E71BA6A4CA00744EFD /* Info.plist */; };
+		F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,12 @@
 		F85DA8551BA6189E00744EFD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F85DA8591BA618B800744EFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F85DA85F1BA698D800744EFD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F85DA8611BA6991A00744EFD /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		F85DA8E41BA6A48A00744EFD /* SODAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SODAKit.framework; sourceTree = "<group>"; };
+		F85DA8E71BA6A4CA00744EFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SODAClient.swift; sourceTree = "<group>"; };
+		F85DA8E91BA6A4CA00744EFD /* SODAKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +75,7 @@
 				F85DA8561BA6189E00744EFD /* Security.framework in Frameworks */,
 				F85DA8541BA6189200744EFD /* MobileCoreServices.framework in Frameworks */,
 				F85DA8521BA6188600744EFD /* MapKit.framework in Frameworks */,
+				F85DA8E51BA6A48A00744EFD /* SODAKit.framework in Frameworks */,
 				F85DA8501BA6187A00744EFD /* Foundation.framework in Frameworks */,
 				F85DA84E1BA6183500744EFD /* CoreLocation.framework in Frameworks */,
 				F85DA84C1BA6182B00744EFD /* CFNetwork.framework in Frameworks */,
@@ -83,6 +95,8 @@
 		F85DA81D1BA6159800744EFD = {
 			isa = PBXGroup;
 			children = (
+				F85DA8E41BA6A48A00744EFD /* SODAKit.framework */,
+				F85DA8E61BA6A4CA00744EFD /* SODAKit */,
 				F85DA8591BA618B800744EFD /* UIKit.framework */,
 				F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */,
 				F85DA8551BA6189E00744EFD /* Security.framework */,
@@ -115,6 +129,8 @@
 				F85DA8321BA6159800744EFD /* Images.xcassets */,
 				F85DA8341BA6159800744EFD /* LaunchScreen.xib */,
 				F85DA8291BA6159800744EFD /* Supporting Files */,
+				F85DA85F1BA698D800744EFD /* MapViewController.swift */,
+				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
 			);
 			path = SFMobileFood;
 			sourceTree = "<group>";
@@ -142,6 +158,16 @@
 				F85DA8401BA6159900744EFD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F85DA8E61BA6A4CA00744EFD /* SODAKit */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA8E71BA6A4CA00744EFD /* Info.plist */,
+				F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */,
+				F85DA8E91BA6A4CA00744EFD /* SODAKit.h */,
+			);
+			path = SODAKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85DA8EA1BA6A4CA00744EFD /* Info.plist in Resources */,
 				F85DA8311BA6159800744EFD /* Main.storyboard in Resources */,
 				F85DA8361BA6159800744EFD /* LaunchScreen.xib in Resources */,
 				F85DA8331BA6159800744EFD /* Images.xcassets in Resources */,
@@ -245,6 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */,
+				F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */,
+				F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */,
+				F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */,
 				F85DA82C1BA6159800744EFD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +404,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/iyepes/Documents/XCode/SDKs/SODAKIt,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SFMobileFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,6 +419,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/iyepes/Documents/XCode/SDKs/SODAKIt,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SFMobileFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +483,7 @@
 				F85DA8471BA6159900744EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F85DA8481BA6159900744EFD /* Build configuration list for PBXNativeTarget "SFMobileFoodTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +492,7 @@
 				F85DA84A1BA6159900744EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
