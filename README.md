@@ -11,3 +11,7 @@ This first version was created over SODA Swift Beta SDK example https://github.c
 ## Demo
 
 ![SFMobileFood Demo](https://dl.dropboxusercontent.com/u/15652960/github/SFMobileFood.gif)
+
+## Icon Attribution
+
+Icon made by http://www.freepik.com from http://www.flaticon.com is licensed under Creative Commons BY 3.0 http://creativecommons.org/licenses/by/3.0/

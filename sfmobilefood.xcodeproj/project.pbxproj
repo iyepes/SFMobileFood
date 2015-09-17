@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F85DA82C1BA6159800744EFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA82B1BA6159800744EFD /* AppDelegate.swift */; };
+		F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA82D1BA6159800744EFD /* ViewController.swift */; };
+		F85DA8311BA6159800744EFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85DA82F1BA6159800744EFD /* Main.storyboard */; };
+		F85DA8331BA6159800744EFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85DA8321BA6159800744EFD /* Images.xcassets */; };
+		F85DA8361BA6159800744EFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85DA8341BA6159800744EFD /* LaunchScreen.xib */; };
+		F85DA8421BA6159900744EFD /* SFMobileFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8411BA6159900744EFD /* SFMobileFoodTests.swift */; };
+		F85DA84C1BA6182B00744EFD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA84B1BA6182B00744EFD /* CFNetwork.framework */; };
+		F85DA84E1BA6183500744EFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA84D1BA6183500744EFD /* CoreLocation.framework */; };
+		F85DA8501BA6187A00744EFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA84F1BA6187A00744EFD /* Foundation.framework */; };
+		F85DA8521BA6188600744EFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8511BA6188600744EFD /* MapKit.framework */; };
+		F85DA8541BA6189200744EFD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8531BA6189200744EFD /* MobileCoreServices.framework */; };
+		F85DA8561BA6189E00744EFD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8551BA6189E00744EFD /* Security.framework */; };
+		F85DA8581BA618AB00744EFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */; };
+		F85DA85A1BA618B800744EFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8591BA618B800744EFD /* UIKit.framework */; };
+		F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA85F1BA698D800744EFD /* MapViewController.swift */; };
+		F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8611BA6991A00744EFD /* QueryViewController.swift */; };
+		F85DA8E51BA6A48A00744EFD /* SODAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8E41BA6A48A00744EFD /* SODAKit.framework */; };
+		F85DA8EA1BA6A4CA00744EFD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F85DA8E71BA6A4CA00744EFD /* Info.plist */; };
+		F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F85DA83C1BA6159900744EFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F85DA81E1BA6159800744EFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F85DA8251BA6159800744EFD;
+			remoteInfo = SFMobileFood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F85DA8261BA6159800744EFD /* sfmobilefood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfmobilefood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85DA82A1BA6159800744EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85DA82B1BA6159800744EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F85DA82D1BA6159800744EFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F85DA8301BA6159800744EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F85DA8321BA6159800744EFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F85DA8351BA6159800744EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F85DA83B1BA6159900744EFD /* sfmobilefoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sfmobilefoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85DA8401BA6159900744EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85DA8411BA6159900744EFD /* SFMobileFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMobileFoodTests.swift; sourceTree = "<group>"; };
+		F85DA84B1BA6182B00744EFD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F85DA84D1BA6183500744EFD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F85DA84F1BA6187A00744EFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F85DA8511BA6188600744EFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F85DA8531BA6189200744EFD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F85DA8551BA6189E00744EFD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F85DA8591BA618B800744EFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F85DA85F1BA698D800744EFD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F85DA8611BA6991A00744EFD /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		F85DA8E41BA6A48A00744EFD /* SODAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SODAKit.framework; sourceTree = "<group>"; };
+		F85DA8E71BA6A4CA00744EFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SODAClient.swift; sourceTree = "<group>"; };
+		F85DA8E91BA6A4CA00744EFD /* SODAKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAKit.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F85DA8231BA6159800744EFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85DA85A1BA618B800744EFD /* UIKit.framework in Frameworks */,
+				F85DA8581BA618AB00744EFD /* SystemConfiguration.framework in Frameworks */,
+				F85DA8561BA6189E00744EFD /* Security.framework in Frameworks */,
+				F85DA8541BA6189200744EFD /* MobileCoreServices.framework in Frameworks */,
+				F85DA8521BA6188600744EFD /* MapKit.framework in Frameworks */,
+				F85DA8E51BA6A48A00744EFD /* SODAKit.framework in Frameworks */,
+				F85DA8501BA6187A00744EFD /* Foundation.framework in Frameworks */,
+				F85DA84E1BA6183500744EFD /* CoreLocation.framework in Frameworks */,
+				F85DA84C1BA6182B00744EFD /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85DA8381BA6159900744EFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F85DA81D1BA6159800744EFD = {
+			isa = PBXGroup;
+			children = (
+				F85DA8E41BA6A48A00744EFD /* SODAKit.framework */,
+				F85DA8E61BA6A4CA00744EFD /* SODAKit */,
+				F85DA8591BA618B800744EFD /* UIKit.framework */,
+				F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */,
+				F85DA8551BA6189E00744EFD /* Security.framework */,
+				F85DA8531BA6189200744EFD /* MobileCoreServices.framework */,
+				F85DA8511BA6188600744EFD /* MapKit.framework */,
+				F85DA84F1BA6187A00744EFD /* Foundation.framework */,
+				F85DA84D1BA6183500744EFD /* CoreLocation.framework */,
+				F85DA84B1BA6182B00744EFD /* CFNetwork.framework */,
+				F85DA8281BA6159800744EFD /* SFMobileFood */,
+				F85DA83E1BA6159900744EFD /* SFMobileFoodTests */,
+				F85DA8271BA6159800744EFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F85DA8271BA6159800744EFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA8261BA6159800744EFD /* sfmobilefood.app */,
+				F85DA83B1BA6159900744EFD /* sfmobilefoodTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F85DA8281BA6159800744EFD /* SFMobileFood */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA82B1BA6159800744EFD /* AppDelegate.swift */,
+				F85DA82D1BA6159800744EFD /* ViewController.swift */,
+				F85DA82F1BA6159800744EFD /* Main.storyboard */,
+				F85DA8321BA6159800744EFD /* Images.xcassets */,
+				F85DA8341BA6159800744EFD /* LaunchScreen.xib */,
+				F85DA8291BA6159800744EFD /* Supporting Files */,
+				F85DA85F1BA698D800744EFD /* MapViewController.swift */,
+				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
+			);
+			path = SFMobileFood;
+			sourceTree = "<group>";
+		};
+		F85DA8291BA6159800744EFD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA82A1BA6159800744EFD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F85DA83E1BA6159900744EFD /* SFMobileFoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA8411BA6159900744EFD /* SFMobileFoodTests.swift */,
+				F85DA83F1BA6159900744EFD /* Supporting Files */,
+			);
+			path = SFMobileFoodTests;
+			sourceTree = "<group>";
+		};
+		F85DA83F1BA6159900744EFD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA8401BA6159900744EFD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F85DA8E61BA6A4CA00744EFD /* SODAKit */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA8E71BA6A4CA00744EFD /* Info.plist */,
+				F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */,
+				F85DA8E91BA6A4CA00744EFD /* SODAKit.h */,
+			);
+			path = SODAKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F85DA8251BA6159800744EFD /* sfmobilefood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F85DA8451BA6159900744EFD /* Build configuration list for PBXNativeTarget "sfmobilefood" */;
+			buildPhases = (
+				F85DA8221BA6159800744EFD /* Sources */,
+				F85DA8231BA6159800744EFD /* Frameworks */,
+				F85DA8241BA6159800744EFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sfmobilefood;
+			productName = SFMobileFood;
+			productReference = F85DA8261BA6159800744EFD /* sfmobilefood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F85DA83A1BA6159900744EFD /* sfmobilefoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F85DA8481BA6159900744EFD /* Build configuration list for PBXNativeTarget "sfmobilefoodTests" */;
+			buildPhases = (
+				F85DA8371BA6159900744EFD /* Sources */,
+				F85DA8381BA6159900744EFD /* Frameworks */,
+				F85DA8391BA6159900744EFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F85DA83D1BA6159900744EFD /* PBXTargetDependency */,
+			);
+			name = sfmobilefoodTests;
+			productName = SFMobileFoodTests;
+			productReference = F85DA83B1BA6159900744EFD /* sfmobilefoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F85DA81E1BA6159800744EFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Hacemos Contactos";
+				TargetAttributes = {
+					F85DA8251BA6159800744EFD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					F85DA83A1BA6159900744EFD = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = F85DA8251BA6159800744EFD;
+					};
+				};
+			};
+			buildConfigurationList = F85DA8211BA6159800744EFD /* Build configuration list for PBXProject "sfmobilefood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F85DA81D1BA6159800744EFD;
+			productRefGroup = F85DA8271BA6159800744EFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F85DA8251BA6159800744EFD /* sfmobilefood */,
+				F85DA83A1BA6159900744EFD /* sfmobilefoodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F85DA8241BA6159800744EFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85DA8EA1BA6A4CA00744EFD /* Info.plist in Resources */,
+				F85DA8311BA6159800744EFD /* Main.storyboard in Resources */,
+				F85DA8361BA6159800744EFD /* LaunchScreen.xib in Resources */,
+				F85DA8331BA6159800744EFD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85DA8391BA6159900744EFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F85DA8221BA6159800744EFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */,
+				F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */,
+				F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */,
+				F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */,
+				F85DA82C1BA6159800744EFD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85DA8371BA6159900744EFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85DA8421BA6159900744EFD /* SFMobileFoodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F85DA83D1BA6159900744EFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F85DA8251BA6159800744EFD /* sfmobilefood */;
+			targetProxy = F85DA83C1BA6159900744EFD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F85DA82F1BA6159800744EFD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F85DA8301BA6159800744EFD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F85DA8341BA6159800744EFD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F85DA8351BA6159800744EFD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F85DA8431BA6159900744EFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F85DA8441BA6159900744EFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F85DA8461BA6159900744EFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/iyepes/Documents/XCode/SDKs/SODAKIt,
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SFMobileFood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = sfmobilefood;
+			};
+			name = Debug;
+		};
+		F85DA8471BA6159900744EFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/iyepes/Documents/XCode/SDKs/SODAKIt,
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SFMobileFood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = sfmobilefood;
+			};
+			name = Release;
+		};
+		F85DA8491BA6159900744EFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SFMobileFoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = sfmobilefoodTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFMobileFood.app/SFMobileFood";
+			};
+			name = Debug;
+		};
+		F85DA84A1BA6159900744EFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SFMobileFoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = sfmobilefoodTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFMobileFood.app/SFMobileFood";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F85DA8211BA6159800744EFD /* Build configuration list for PBXProject "sfmobilefood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85DA8431BA6159900744EFD /* Debug */,
+				F85DA8441BA6159900744EFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F85DA8451BA6159900744EFD /* Build configuration list for PBXNativeTarget "sfmobilefood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85DA8461BA6159900744EFD /* Debug */,
+				F85DA8471BA6159900744EFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F85DA8481BA6159900744EFD /* Build configuration list for PBXNativeTarget "sfmobilefoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85DA8491BA6159900744EFD /* Debug */,
+				F85DA84A1BA6159900744EFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F85DA81E1BA6159800744EFD /* Project object */;
+}
