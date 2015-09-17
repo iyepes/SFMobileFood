@@ -219,6 +219,7 @@
 				TargetAttributes = {
 					F85DA8251BA6159800744EFD = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YH75XCD6X7;
 					};
 					F85DA83A1BA6159900744EFD = {
 						CreatedOnToolsVersion = 6.4;
@@ -404,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/iyepes/Documents/XCode/SDKs/SODAKIt,
@@ -419,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/iyepes/Documents/XCode/SDKs/SODAKIt,
