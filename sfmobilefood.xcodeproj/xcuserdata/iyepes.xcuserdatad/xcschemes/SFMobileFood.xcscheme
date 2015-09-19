@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F85DA8251BA6159800744EFD"
-               BuildableName = "SFMobileFoodTemp.app"
+               BuildableName = "sfmobilefood.app"
                BlueprintName = "sfmobilefood"
                ReferencedContainer = "container:sfmobilefood.xcodeproj">
             </BuildableReference>
@@ -29,8 +29,22 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F85DA83A1BA6159900744EFD"
-               BuildableName = "SFMobileFoodTempTests.xctest"
+               BuildableName = "sfmobilefoodTests.xctest"
                BlueprintName = "sfmobilefoodTests"
+               ReferencedContainer = "container:sfmobilefood.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8B7F4DC1BAD0D1F0001EAAB"
+               BuildableName = "SODAKitTests.xctest"
+               BlueprintName = "SODAKitTests"
                ReferencedContainer = "container:sfmobilefood.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +61,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F85DA83A1BA6159900744EFD"
-               BuildableName = "SFMobileFoodTempTests.xctest"
+               BuildableName = "sfmobilefoodTests.xctest"
                BlueprintName = "sfmobilefoodTests"
+               ReferencedContainer = "container:sfmobilefood.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8B7F4DC1BAD0D1F0001EAAB"
+               BuildableName = "SODAKitTests.xctest"
+               BlueprintName = "SODAKitTests"
                ReferencedContainer = "container:sfmobilefood.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,7 +81,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F85DA8251BA6159800744EFD"
-            BuildableName = "SFMobileFoodTemp.app"
+            BuildableName = "sfmobilefood.app"
             BlueprintName = "sfmobilefood"
             ReferencedContainer = "container:sfmobilefood.xcodeproj">
          </BuildableReference>
@@ -77,7 +101,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F85DA8251BA6159800744EFD"
-            BuildableName = "SFMobileFoodTemp.app"
+            BuildableName = "sfmobilefood.app"
             BlueprintName = "sfmobilefood"
             ReferencedContainer = "container:sfmobilefood.xcodeproj">
          </BuildableReference>
@@ -96,7 +120,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F85DA8251BA6159800744EFD"
-            BuildableName = "SFMobileFoodTemp.app"
+            BuildableName = "sfmobilefood.app"
             BlueprintName = "sfmobilefood"
             ReferencedContainer = "container:sfmobilefood.xcodeproj">
          </BuildableReference>
