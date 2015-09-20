@@ -31,7 +31,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         // Clear old annotations
-        if let ex = mapView.annotations {
+        
+        if mapView.annotations.count > 0 {
+            let ex = mapView.annotations
             mapView.removeAnnotations(ex)
         }
         

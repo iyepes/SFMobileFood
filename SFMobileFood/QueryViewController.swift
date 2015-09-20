@@ -60,7 +60,7 @@ class QueryViewController: UITableViewController {
     }
     
     /// Finds the map controller and updates its data
-    private func updateMap(#animated: Bool) {
+    private func updateMap(animated animated: Bool) {
         if let tabs = (self.parentViewController?.parentViewController as? UITabBarController) {
             if let mapNav = tabs.viewControllers![1] as? UINavigationController {
                 if let map = mapNav.viewControllers[0] as? MapViewController {
@@ -82,7 +82,7 @@ class QueryViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! UITableViewCell!
+        let c = tableView.dequeueReusableCellWithIdentifier(cellId) as UITableViewCell!
         
         let item = data[indexPath.row]
         
@@ -91,7 +91,7 @@ class QueryViewController: UITableViewController {
         
         let placeId = item["objectid"]! as! String
         
-        var fullName = name + " " + placeId
+        let fullName = name + " " + placeId
         
         //c.textLabel?.text = name
         c.textLabel?.text = fullName

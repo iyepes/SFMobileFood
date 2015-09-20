@@ -344,7 +344,9 @@
 		F85DA81E1BA6159800744EFD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Hacemos Contactos";
 				TargetAttributes = {
 					F85DA8251BA6159800744EFD = {
@@ -488,6 +490,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -562,6 +565,7 @@
 				);
 				INFOPLIST_FILE = SFMobileFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hacemoscontactos.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sfmobilefood;
 			};
 			name = Debug;
@@ -578,6 +582,7 @@
 				);
 				INFOPLIST_FILE = SFMobileFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hacemoscontactos.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sfmobilefood;
 			};
 			name = Release;
@@ -596,6 +601,7 @@
 				);
 				INFOPLIST_FILE = SFMobileFoodTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hacemoscontactos.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sfmobilefoodTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFMobileFood.app/SFMobileFood";
 			};
@@ -611,6 +617,7 @@
 				);
 				INFOPLIST_FILE = SFMobileFoodTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hacemoscontactos.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sfmobilefoodTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFMobileFood.app/SFMobileFood";
 			};
@@ -631,6 +638,7 @@
 				INFOPLIST_FILE = SODAKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.socrata.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -649,6 +657,7 @@
 				INFOPLIST_FILE = SODAKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.socrata.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -693,6 +702,7 @@
 				F8B7F50E1BAD0FC70001EAAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
