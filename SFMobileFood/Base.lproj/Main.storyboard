@@ -1,37 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cvc-kK-R6H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cvc-kK-R6H">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Query-->
         <scene sceneID="F0l-Yb-wQ0">
             <objects>
                 <tableViewController storyboardIdentifier="queryVC" title="Query" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MAT-yn-aAS" customClass="QueryViewController" customModule="sfmobilefood" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="c4Y-w9-LsZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="22" sectionFooterHeight="22" id="c4Y-w9-LsZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="4fC-CG-PDP" detailTextLabel="P3d-tK-9et" style="IBUITableViewCellStyleSubtitle" id="YMC-LW-7Jf">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="138" id="YMC-LW-7Jf" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YMC-LW-7Jf" id="pWh-nw-AtM">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="YMC-LW-7Jf" id="pWh-nw-AtM">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="137"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4fC-CG-PDP">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txc-7Q-FdW">
+                                            <rect key="frame" x="8" y="8" width="559" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P3d-tK-9et">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-hN-k3c">
+                                            <rect key="frame" x="8" y="62" width="559" height="67"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="67" id="mVM-cr-g54"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-ES-tFB">
+                                            <rect key="frame" x="8" y="36" width="559" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="txc-7Q-FdW" firstAttribute="top" secondItem="pWh-nw-AtM" secondAttribute="topMargin" id="6Rg-Cu-4Z8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AQX-ES-tFB" secondAttribute="trailing" constant="-8" id="76B-H3-rnY"/>
+                                        <constraint firstItem="AQX-ES-tFB" firstAttribute="top" secondItem="txc-7Q-FdW" secondAttribute="bottom" constant="7" id="9Nf-rI-XrT"/>
+                                        <constraint firstItem="AQX-ES-tFB" firstAttribute="leading" secondItem="pWh-nw-AtM" secondAttribute="leadingMargin" id="SxV-pA-jxW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IHg-hN-k3c" secondAttribute="trailing" constant="-8" id="Wm6-Xq-ttB"/>
+                                        <constraint firstItem="txc-7Q-FdW" firstAttribute="leading" secondItem="pWh-nw-AtM" secondAttribute="leadingMargin" id="aFd-BB-Ywz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="txc-7Q-FdW" secondAttribute="trailing" constant="-8" id="lGk-iY-vbh"/>
+                                        <constraint firstItem="IHg-hN-k3c" firstAttribute="leading" secondItem="pWh-nw-AtM" secondAttribute="leadingMargin" id="mtb-N4-b75"/>
+                                        <constraint firstItem="IHg-hN-k3c" firstAttribute="top" secondItem="AQX-ES-tFB" secondAttribute="bottom" constant="5" id="vVE-0M-p0L"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="cartAddress" destination="AQX-ES-tFB" id="rAp-Og-bkk"/>
+                                    <outlet property="cartFood" destination="IHg-hN-k3c" id="Iro-mp-Jke"/>
+                                    <outlet property="cartName" destination="txc-7Q-FdW" id="8lM-pJ-JZ9"/>
+                                    <segue destination="VNz-t9-Rty" kind="show" identifier="OpenCartDetails" id="Ixo-fu-m5Y"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,6 +81,64 @@
             </objects>
             <point key="canvasLocation" x="1562" y="-446"/>
         </scene>
+        <!--Detail View View Controller-->
+        <scene sceneID="vVx-xP-VhK">
+            <objects>
+                <viewController id="VNz-t9-Rty" customClass="HCMFDetailViewViewController" customModule="sfmobilefood" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BA6-Ul-fGc"/>
+                        <viewControllerLayoutGuide type="bottom" id="DeA-gt-oVf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MA5-5S-N6V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtK-nh-VB7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Food Cart Details" id="1Sw-Ec-5Bh">
+                                        <barButtonItem key="backBarButtonItem" image="QueryTab" style="plain" id="wvS-8p-REq">
+                                            <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-JN-Fbd">
+                                <rect key="frame" x="270" y="79" width="260" height="254"/>
+                                <animations/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1Y-vZ-yuZ">
+                                <rect key="frame" x="188" y="79" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DeA-gt-oVf" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" priority="250" constant="267" id="GBD-dr-wu9"/>
+                            <constraint firstAttribute="trailing" secondItem="TtK-nh-VB7" secondAttribute="trailing" id="KkK-DF-yHi"/>
+                            <constraint firstItem="cCD-JN-Fbd" firstAttribute="centerX" secondItem="MA5-5S-N6V" secondAttribute="centerX" constant="100" id="Opc-nm-Vug"/>
+                            <constraint firstItem="TtK-nh-VB7" firstAttribute="top" secondItem="MA5-5S-N6V" secondAttribute="top" id="QBw-KP-CZ6"/>
+                            <constraint firstItem="cCD-JN-Fbd" firstAttribute="leading" secondItem="v1Y-vZ-yuZ" secondAttribute="trailing" constant="40" id="RLZ-Rm-GaZ"/>
+                            <constraint firstItem="cCD-JN-Fbd" firstAttribute="top" secondItem="v1Y-vZ-yuZ" secondAttribute="top" id="Xmz-4e-ZhF"/>
+                            <constraint firstItem="TtK-nh-VB7" firstAttribute="leading" secondItem="MA5-5S-N6V" secondAttribute="leading" id="Z7m-MB-Poq"/>
+                            <constraint firstItem="cCD-JN-Fbd" firstAttribute="top" secondItem="TtK-nh-VB7" secondAttribute="bottom" constant="35" id="o7U-PF-Mvp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cCD-JN-Fbd" secondAttribute="trailing" priority="250" constant="50" id="xNb-0m-xSr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DetailsMapView" destination="cCD-JN-Fbd" id="gue-hY-y2Y"/>
+                        <segue destination="MAT-yn-aAS" kind="custom" identifier="DismissCartDetails" customClass="DismissSegue" customModule="sfmobilefood" customModuleProvider="target" id="2od-qm-60f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-fJ-Bwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2287" y="-446"/>
+        </scene>
         <!--Map View-->
         <scene sceneID="0ec-Uw-Cog">
             <objects>
@@ -53,6 +147,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D5k-up-kGD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="uAv-ml-0cf" kind="relationship" relationship="rootViewController" id="ehS-Es-JvH"/>
@@ -76,11 +171,13 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-Ke-NMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="uAv-ml-0cf" id="WuS-Ew-v3y"/>
                                 </connections>
                             </mapView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cr9-Ke-NMQ" firstAttribute="top" secondItem="u3i-l7-xL8" secondAttribute="top" id="DQI-bA-yyZ"/>
@@ -106,6 +203,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Wa9-oX-Zou">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -125,6 +223,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dts-gA-IKk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="MAT-yn-aAS" kind="relationship" relationship="rootViewController" id="Puw-rA-lCd"/>
@@ -136,7 +235,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="QueryTab" width="30" height="30"/>
         <image name="cart-icon" width="30" height="30"/>
         <image name="world90" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Puw-rA-lCd"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -40,9 +40,9 @@ class QueryViewController: UITableViewController {
         
         let cngQuery = client.queryDataset("rqzj-sfat").filter("status = 'APPROVED'")
         
-        //cngQuery.orderAscending("at_scene_time").get { res in
+        //cngQuery.orderAscending("expirationdate").get { res in
         
-        cngQuery.orderAscending("expirationdate").get { res in
+        cngQuery.orderAscending("applicant").get { res in
             switch res {
             case .Dataset (let data):
                 // Update our data
@@ -82,28 +82,24 @@ class QueryViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let c = tableView.dequeueReusableCellWithIdentifier(cellId) as UITableViewCell!
+
+        let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
         
         let item = data[indexPath.row]
         
-        //let name = item["event_clearance_description"]! as! String
         let name = item["applicant"]! as! String
-        
         let placeId = item["objectid"]! as! String
         
-        let fullName = name + " " + placeId
-        
-        //c.textLabel?.text = name
-        c.textLabel?.text = fullName
-        /*
-        let street = item["hundred_block_location"]! as! String
-        let city = "Seattle"
-        let state = "WA"*/
-        
+        let fullName = name
+        let foodType = item["fooditems"]! as! String
         let street = item["address"]! as! String
-        let city = "San Francisco"
-        let state = "CA"
-        c.detailTextLabel?.text = "\(street), \(city), \(state)"
+        
+        c.cartName?.text = fullName
+        c.cartFood?.text = foodType
+        //let city = "San Francisco"
+        //let state = "CA"
+        //c.detailTextLabel?.text = "\(street), \(city), \(state)"
+        c.cartAddress?.text = street
         
         return c
     }
