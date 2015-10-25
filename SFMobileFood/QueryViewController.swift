@@ -10,10 +10,7 @@ import UIKit
 
 class QueryViewController: UITableViewController {
     
-    // Register for access tokens here: http://dev.socrata.com/register
-    // CGxaHQoQlgQSev4zyUh5aR5J3
-    //let client = SODAClient(domain: "data.seattle.gov", token: "doOsHAaYFknfIi8v6gxUHVEzw")
-    
+    //Open Data URL and Registered access tokens in: http://dev.socrata.com/register
     let client = SODAClient(domain: "data.sfgov.org", token: "doOsHAaYFknfIi8v6gxUHVEzw")
     
     let cellId = "DetailCell"
@@ -70,14 +67,14 @@ class QueryViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: (UITableView!), didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
         // Show the map
         if let tabs = (self.parentViewController?.parentViewController as? UITabBarController) {
             tabs.selectedIndex = 1
         }
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: (UITableView!), numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     

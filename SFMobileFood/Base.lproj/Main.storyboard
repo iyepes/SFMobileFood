@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cvc-kK-R6H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cvc-kK-R6H">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,21 +17,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="138" id="YMC-LW-7Jf" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="138"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="YMC-LW-7Jf" id="pWh-nw-AtM">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="137"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txc-7Q-FdW">
-                                            <rect key="frame" x="8" y="8" width="559" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="477" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-hN-k3c">
-                                            <rect key="frame" x="8" y="62" width="559" height="67"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-hN-k3c">
+                                            <rect key="frame" x="8" y="62" width="477" height="67"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="67" id="mVM-cr-g54"/>
@@ -41,32 +41,54 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-ES-tFB">
-                                            <rect key="frame" x="8" y="36" width="559" height="21"/>
+                                            <rect key="frame" x="8" y="36" width="477" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-IO-vJb">
+                                            <rect key="frame" x="493" y="54" width="66" height="30"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="Ron-hN-VDs"/>
+                                            </constraints>
+                                            <state key="normal" title="Details"/>
+                                            <connections>
+                                                <segue destination="VNz-t9-Rty" kind="presentation" identifier="OpenCartDetails" modalTransitionStyle="partialCurl" id="xQ6-JW-9ep"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="txc-7Q-FdW" firstAttribute="top" secondItem="pWh-nw-AtM" secondAttribute="topMargin" id="6Rg-Cu-4Z8"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="AQX-ES-tFB" secondAttribute="trailing" constant="-8" id="76B-H3-rnY"/>
                                         <constraint firstItem="AQX-ES-tFB" firstAttribute="top" secondItem="txc-7Q-FdW" secondAttribute="bottom" constant="7" id="9Nf-rI-XrT"/>
+                                        <constraint firstItem="tNh-IO-vJb" firstAttribute="leading" secondItem="txc-7Q-FdW" secondAttribute="trailing" constant="8" id="RTW-mq-BYh"/>
                                         <constraint firstItem="AQX-ES-tFB" firstAttribute="leading" secondItem="pWh-nw-AtM" secondAttribute="leadingMargin" id="SxV-pA-jxW"/>
+                                        <constraint firstItem="tNh-IO-vJb" firstAttribute="leading" secondItem="AQX-ES-tFB" secondAttribute="trailing" constant="8" id="Tdq-kW-Aj8"/>
+                                        <constraint firstItem="tNh-IO-vJb" firstAttribute="leading" secondItem="IHg-hN-k3c" secondAttribute="trailing" constant="8" id="WSl-wt-gh8"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="IHg-hN-k3c" secondAttribute="trailing" constant="-8" id="Wm6-Xq-ttB"/>
                                         <constraint firstItem="txc-7Q-FdW" firstAttribute="leading" secondItem="pWh-nw-AtM" secondAttribute="leadingMargin" id="aFd-BB-Ywz"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="txc-7Q-FdW" secondAttribute="trailing" constant="-8" id="lGk-iY-vbh"/>
                                         <constraint firstItem="IHg-hN-k3c" firstAttribute="leading" secondItem="pWh-nw-AtM" secondAttribute="leadingMargin" id="mtb-N4-b75"/>
                                         <constraint firstItem="IHg-hN-k3c" firstAttribute="top" secondItem="AQX-ES-tFB" secondAttribute="bottom" constant="5" id="vVE-0M-p0L"/>
+                                        <constraint firstItem="tNh-IO-vJb" firstAttribute="trailing" secondItem="pWh-nw-AtM" secondAttribute="trailingMargin" id="zLE-qc-cp3"/>
+                                        <constraint firstItem="tNh-IO-vJb" firstAttribute="centerY" secondItem="pWh-nw-AtM" secondAttribute="centerY" id="zbv-91-hx1"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="lGk-iY-vbh"/>
+                                            <exclude reference="76B-H3-rnY"/>
+                                            <exclude reference="Wm6-Xq-ttB"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="cartAddress" destination="AQX-ES-tFB" id="rAp-Og-bkk"/>
                                     <outlet property="cartFood" destination="IHg-hN-k3c" id="Iro-mp-Jke"/>
                                     <outlet property="cartName" destination="txc-7Q-FdW" id="8lM-pJ-JZ9"/>
-                                    <segue destination="VNz-t9-Rty" kind="show" identifier="OpenCartDetails" id="Ixo-fu-m5Y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,46 +115,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtK-nh-VB7">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Food Cart Details" id="1Sw-Ec-5Bh">
-                                        <barButtonItem key="backBarButtonItem" image="QueryTab" style="plain" id="wvS-8p-REq">
-                                            <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-JN-Fbd">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-JN-Fbd">
                                 <rect key="frame" x="270" y="79" width="260" height="254"/>
                                 <animations/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1Y-vZ-yuZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1Y-vZ-yuZ">
                                 <rect key="frame" x="188" y="79" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwE-2M-sDs">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="MAT-yn-aAS" kind="custom" identifier="DismissCartDetails" customClass="DismissSegue" customModule="sfmobilefood" customModuleProvider="target" id="QBy-49-Ip1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DeA-gt-oVf" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" priority="250" constant="267" id="GBD-dr-wu9"/>
-                            <constraint firstAttribute="trailing" secondItem="TtK-nh-VB7" secondAttribute="trailing" id="KkK-DF-yHi"/>
                             <constraint firstItem="cCD-JN-Fbd" firstAttribute="centerX" secondItem="MA5-5S-N6V" secondAttribute="centerX" constant="100" id="Opc-nm-Vug"/>
-                            <constraint firstItem="TtK-nh-VB7" firstAttribute="top" secondItem="MA5-5S-N6V" secondAttribute="top" id="QBw-KP-CZ6"/>
                             <constraint firstItem="cCD-JN-Fbd" firstAttribute="leading" secondItem="v1Y-vZ-yuZ" secondAttribute="trailing" constant="40" id="RLZ-Rm-GaZ"/>
                             <constraint firstItem="cCD-JN-Fbd" firstAttribute="top" secondItem="v1Y-vZ-yuZ" secondAttribute="top" id="Xmz-4e-ZhF"/>
-                            <constraint firstItem="TtK-nh-VB7" firstAttribute="leading" secondItem="MA5-5S-N6V" secondAttribute="leading" id="Z7m-MB-Poq"/>
-                            <constraint firstItem="cCD-JN-Fbd" firstAttribute="top" secondItem="TtK-nh-VB7" secondAttribute="bottom" constant="35" id="o7U-PF-Mvp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cCD-JN-Fbd" secondAttribute="trailing" priority="250" constant="50" id="xNb-0m-xSr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="DetailsMapView" destination="cCD-JN-Fbd" id="gue-hY-y2Y"/>
-                        <segue destination="MAT-yn-aAS" kind="custom" identifier="DismissCartDetails" customClass="DismissSegue" customModule="sfmobilefood" customModuleProvider="target" id="2od-qm-60f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-fJ-Bwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,11 +249,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="QueryTab" width="30" height="30"/>
         <image name="cart-icon" width="30" height="30"/>
         <image name="world90" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Puw-rA-lCd"/>
+        <segue reference="QBy-49-Ip1"/>
     </inferredMetricsTieBreakers>
 </document>
