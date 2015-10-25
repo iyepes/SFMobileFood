@@ -230,6 +230,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="v1Y-vZ-yuZ" firstAttribute="leading" secondItem="MA5-5S-N6V" secondAttribute="leadingMargin" constant="-3" id="Ax9-3M-jTF"/>
                             <constraint firstItem="DeA-gt-oVf" firstAttribute="top" secondItem="Non-9M-sas" secondAttribute="bottom" constant="-29" id="AzH-rA-lI9"/>
@@ -348,6 +349,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="MAT-yn-aAS" kind="relationship" relationship="rootViewController" id="Puw-rA-lCd"/>
