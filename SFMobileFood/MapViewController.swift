@@ -44,20 +44,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Create annotations for the data
         var anns : [MKAnnotation] = []
         for item in data {
-            //if let loc: AnyObject = item["incident_location"] {
-            if let loc: AnyObject = item["location"] {
-                let lat = (item["latitude"]! as! NSString).doubleValue
-                let lon = (item["longitude"]! as! NSString).doubleValue
+            let cellData = HCMFDataInfo(item: item) as HCMFDataInfo
+            if cellData.hasLocation() {
+                let lat = cellData.lat
+                let lon = cellData.lon
                 lata += lat
                 lona += lon
                 let a = MKPointAnnotation()
-                //a.title = item["event_clearance_description"]! as! String
-                a.title = item["applicant"]! as! String
-                if let foodItems = item["fooditems"]  {
-                    a.subtitle = foodItems as! String
-                } else {
-                    a.subtitle = "N/A"
-                }
+                a.title = cellData.fullName
+                a.subtitle = cellData.foodType
                 a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
                 anns.append(a)
             }

@@ -24,12 +24,13 @@
 		F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA85F1BA698D800744EFD /* MapViewController.swift */; };
 		F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8611BA6991A00744EFD /* QueryViewController.swift */; };
 		F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
-		F85E71D31BB5D66D009927DD /* HCMFDismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */; settings = {ASSET_TAGS = (); }; };
-		F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F85E71D31BB5D66D009927DD /* HCMFDismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */; };
+		F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */; };
 		F8B7F4FE1BAD0FC60001EAAB /* SODAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B7F4FD1BAD0FC60001EAAB /* SODAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B7F5131BAD10770001EAAB /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
 		F8B7F5141BAD10E40001EAAB /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
-		F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */; };
+		F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		F8B7F4FD1BAD0FC60001EAAB /* SODAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SODAKit.h; sourceTree = "<group>"; };
 		F8B7F5091BAD0FC60001EAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B7F50A1BAD0FC60001EAAB /* SODAKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODAKitTests.swift; sourceTree = "<group>"; };
+		F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFDataInfo.swift; sourceTree = "<group>"; };
 		F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
 				F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */,
 				F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */,
+				F8C449521BDD550400A03404 /* Models */,
 			);
 			path = SFMobileFood;
 			sourceTree = "<group>";
@@ -277,6 +280,14 @@
 				F8B7F5091BAD0FC60001EAAB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8C449521BDD550400A03404 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */,
+				F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */,
 				F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */,
 				F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */,
 				F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */,

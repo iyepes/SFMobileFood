@@ -17,6 +17,8 @@ class QueryViewController: UITableViewController {
     
     var data: [[String: AnyObject]]! = []
     
+    var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,8 +38,6 @@ class QueryViewController: UITableViewController {
         //https://data.sfgov.org/resource/rqzj-sfat.json
         
         let cngQuery = client.queryDataset("rqzj-sfat").filter("status = 'APPROVED'")
-        
-        //cngQuery.orderAscending("expirationdate").get { res in
         
         cngQuery.orderAscending("applicant").get { res in
             switch res {
@@ -68,11 +68,15 @@ class QueryViewController: UITableViewController {
     }
     
     override func tableView(tableView: (UITableView!), didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
-        // Show the map
+        /* //Show the map
         if let tabs = (self.parentViewController?.parentViewController as? UITabBarController) {
             tabs.selectedIndex = 1
         }
+        */
+        currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        performSegueWithIdentifier("OpenCartDetails", sender: self)
     }
+    
     
     override func tableView(tableView: (UITableView!), numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -82,22 +86,22 @@ class QueryViewController: UITableViewController {
 
         let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
         
-        let item = data[indexPath.row]
-        
-        let name = item["applicant"]! as! String
-        let placeId = item["objectid"]! as! String
-        
-        let fullName = name
-        let foodType = item["fooditems"]! as! String
-        let street = item["address"]! as! String
-        
-        c.cartName?.text = fullName
-        c.cartFood?.text = foodType
-        //let city = "San Francisco"
-        //let state = "CA"
-        //c.detailTextLabel?.text = "\(street), \(city), \(state)"
-        c.cartAddress?.text = street
-        
+        let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        c.cartName.text = cellData.fullName
+        c.cartFood.text = cellData.foodType
+        c.cartAddress.text = cellData.street
         return c
     }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "OpenCartDetails") {
+            var destinationViewController = segue.destinationViewController as! HCMFDetailViewViewController
+            destinationViewController.currentItem = currentItem
+            
+        }
+    }
+    
 }

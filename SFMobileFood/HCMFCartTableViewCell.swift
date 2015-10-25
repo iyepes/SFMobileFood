@@ -8,10 +8,8 @@
 
 import UIKit
 
-
-
 class HCMFCartTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var cartName: UILabel!
     
     @IBOutlet weak var cartAddress: UILabel!
@@ -28,5 +26,5 @@ class HCMFCartTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
