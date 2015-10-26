@@ -10,6 +10,10 @@ import UIKit
 
 class QueryViewController: UITableViewController {
     
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var upperView: UIView!
+    
     //Open Data URL and Registered access tokens in: http://dev.socrata.com/register
     let client = SODAClient(domain: "data.sfgov.org", token: "doOsHAaYFknfIi8v6gxUHVEzw")
     
@@ -19,13 +23,17 @@ class QueryViewController: UITableViewController {
     
     var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
     
+    var currentParams: HCMFGeneralParams = HCMFGeneralParams()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundColor = currentParams.backgroundColor
         
         // Create a pull-to-refresh control
         refreshControl = UIRefreshControl ()
         refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        
+        loadingActivityIndicator.startAnimating()
         // Auto-refresh
         refresh(self)
     }
@@ -44,9 +52,11 @@ class QueryViewController: UITableViewController {
             case .Dataset (let data):
                 // Update our data
                 self.data = data
+                self.loadingActivityIndicator.stopAnimating()
             case .Error (let err):
                 let alert = UIAlertView(title: "Error Refreshing", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
+                self.loadingActivityIndicator.stopAnimating()
             }
             
             // Update the UI

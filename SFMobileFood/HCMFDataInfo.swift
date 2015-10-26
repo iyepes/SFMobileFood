@@ -37,7 +37,7 @@ class HCMFDataInfo: NSObject {
         if let fooditems = item["fooditems"] {
             return fooditems as! String
         } else {
-            return "N/A"
+            return "Food description not available"
         }
     }
 
@@ -45,7 +45,7 @@ class HCMFDataInfo: NSObject {
         if let schedule = item["dayshours"] {
             return schedule as! String
         } else {
-            return "N/A"
+            return "Schedule not available"
         }
     }
     
@@ -56,10 +56,19 @@ class HCMFDataInfo: NSObject {
             //c.detailTextLabel?.text = "\(street), \(city), \(state)"
             return address as! String
         } else {
-            return "N/A"
+            return "Address not available"
         }
     }
 
+    
+    var facilityType: String {
+        if let facilityType = item["facilitytype"] {
+            return facilityType as! String
+        } else {
+            return "Type not available"
+        }
+    }
+    
     var lat: Double {
         if self.hasLocation() {
             return (item["latitude"]! as! NSString).doubleValue
@@ -86,25 +95,5 @@ class HCMFDataInfo: NSObject {
         }
     
     }
-    
-    
-    /*
-    
-    if let loc: AnyObject = item["location"] {
-    let lat = (item["latitude"]! as! NSString).doubleValue
-    let lon = (item["longitude"]! as! NSString).doubleValue
-    lata += lat
-    lona += lon
-    let a = MKPointAnnotation()
-    a.title = item["applicant"]! as! String
-    if let foodItems = item["fooditems"]  {
-    a.subtitle = foodItems as! String
-    } else {
-    a.subtitle = "N/A"
-    }
-    a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
-    anns.append(a)
-    }
-    
-    */
+
 }

@@ -15,27 +15,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.027730690547529267" green="0.1576762159376657" blue="0.23054388419682548" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="gef-k1-dXM">
+                            <rect key="frame" x="0.0" y="94" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dgo-WF-DnY">
+                                    <rect key="frame" x="282" y="3" width="37" height="37"/>
+                                    <animations/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="dgo-WF-DnY" firstAttribute="centerY" secondItem="gef-k1-dXM" secondAttribute="centerY" id="J8W-oG-V5U"/>
+                                <constraint firstItem="dgo-WF-DnY" firstAttribute="centerX" secondItem="gef-k1-dXM" secondAttribute="centerX" id="nnz-6R-c7k"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="138" id="YMC-LW-7Jf" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="138"/>
+                            <tableViewCell alpha="0.20000000000000001" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="138" id="YMC-LW-7Jf" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="160" width="600" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="YMC-LW-7Jf" id="pWh-nw-AtM">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="137"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txc-7Q-FdW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txc-7Q-FdW">
                                             <rect key="frame" x="8" y="8" width="584" height="23"/>
                                             <animations/>
-                                            <attributedString key="attributedText">
-                                                <fragment content="Name">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="Thonburi-Bold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <nil key="highlightedColor"/>
+                                            <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-hN-k3c">
                                             <rect key="frame" x="8" y="66" width="584" height="67"/>
@@ -44,21 +55,14 @@
                                                 <constraint firstAttribute="height" constant="67" id="mVM-cr-g54"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-ES-tFB">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-ES-tFB">
                                             <rect key="frame" x="8" y="38" width="584" height="23"/>
                                             <animations/>
-                                            <attributedString key="attributedText">
-                                                <fragment content="Address">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="17" name="Thonburi"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -86,6 +90,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="cartAddress" destination="AQX-ES-tFB" id="rAp-Og-bkk"/>
                                     <outlet property="cartFood" destination="IHg-hN-k3c" id="Iro-mp-Jke"/>
@@ -98,8 +104,11 @@
                             <outlet property="delegate" destination="MAT-yn-aAS" id="ze1-2a-uJi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Carts" id="P75-Yf-xGv"/>
+                    <navigationItem key="navigationItem" title="Mobile Food businesses" id="P75-Yf-xGv"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="loadingActivityIndicator" destination="dgo-WF-DnY" id="nr6-VL-baF"/>
+                        <outlet property="upperView" destination="gef-k1-dXM" id="qhI-5L-fCM"/>
                         <segue destination="VNz-t9-Rty" kind="show" identifier="OpenCartDetails" id="404-w9-z14"/>
                     </connections>
                 </tableViewController>
@@ -110,26 +119,26 @@
         <!--Detail View View Controller-->
         <scene sceneID="vVx-xP-VhK">
             <objects>
-                <viewController id="VNz-t9-Rty" customClass="HCMFDetailViewViewController" customModule="sfmobilefood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VNz-t9-Rty" customClass="HCMFDetailViewViewController" customModule="sfmobilefood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BA6-Ul-fGc"/>
                         <viewControllerLayoutGuide type="bottom" id="DeA-gt-oVf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MA5-5S-N6V">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Non-9M-sas">
-                                <rect key="frame" x="20" y="129" width="560" height="451"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Non-9M-sas">
+                                <rect key="frame" x="20" y="159" width="560" height="421"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-kO-Y49">
-                                        <rect key="frame" x="8" y="380" width="544" height="23"/>
+                                        <rect key="frame" x="8" y="412" width="544" height="23"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-JN-Fbd">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-JN-Fbd">
                                         <rect key="frame" x="8" y="12" width="544" height="233"/>
                                         <animations/>
                                         <constraints>
@@ -142,18 +151,20 @@
                                             </mask>
                                         </variation>
                                     </mapView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-7o-nuG">
+                                    <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-7o-nuG">
                                         <rect key="frame" x="8" y="253" width="544" height="87"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="87" id="2P9-3Y-qms"/>
+                                            <constraint firstAttribute="height" priority="250" constant="87" id="2P9-3Y-qms"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Food allowed.">
                                                 <attributes>
+                                                    <color key="NSColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="Thonburi"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <font key="NSOriginalFont" size="14" name="Thonburi"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -163,15 +174,26 @@
                                         <rect key="frame" x="8" y="348" width="544" height="23"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PD-cY-2UF">
+                                        <rect key="frame" x="8" y="380" width="544" height="23"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="3PD-cY-2UF" firstAttribute="leading" secondItem="yFj-Ts-gA7" secondAttribute="leading" id="2c1-Va-U2D"/>
                                     <constraint firstItem="x6S-7o-nuG" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="8" symbolic="YES" id="5G9-Lc-b2S"/>
                                     <constraint firstItem="yFj-Ts-gA7" firstAttribute="trailing" secondItem="cCD-JN-Fbd" secondAttribute="trailing" id="6Re-ut-5WX"/>
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="centerX" secondItem="Non-9M-sas" secondAttribute="centerX" id="9BY-hU-7zq"/>
+                                    <constraint firstItem="3PD-cY-2UF" firstAttribute="trailing" secondItem="yFj-Ts-gA7" secondAttribute="trailing" id="9PL-xp-GPa"/>
                                     <constraint firstItem="sh0-kO-Y49" firstAttribute="leading" secondItem="cCD-JN-Fbd" secondAttribute="leading" id="AYO-dw-Ydk"/>
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="trailing" secondItem="x6S-7o-nuG" secondAttribute="trailing" id="Ar8-8u-ZKi"/>
                                     <constraint firstAttribute="bottom" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="206" id="KNy-kr-ynA"/>
@@ -183,9 +205,13 @@
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="top" secondItem="Non-9M-sas" secondAttribute="top" constant="8" id="PgN-Bo-dbW"/>
                                     <constraint firstAttribute="trailing" secondItem="cCD-JN-Fbd" secondAttribute="trailing" constant="8" id="RKv-Dq-gyE"/>
                                     <constraint firstItem="x6S-7o-nuG" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="8" id="U5N-p3-ypv"/>
+                                    <constraint firstItem="sh0-kO-Y49" firstAttribute="top" secondItem="3PD-cY-2UF" secondAttribute="bottom" constant="9" id="XVc-C8-21H"/>
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="centerX" secondItem="Non-9M-sas" secondAttribute="centerX" id="Yfm-a5-eSI"/>
                                     <constraint firstItem="sh0-kO-Y49" firstAttribute="trailing" secondItem="cCD-JN-Fbd" secondAttribute="trailing" id="bcY-vx-RNT"/>
                                     <constraint firstItem="x6S-7o-nuG" firstAttribute="leading" secondItem="cCD-JN-Fbd" secondAttribute="leading" id="cqn-q3-K6d"/>
+                                    <constraint firstItem="3PD-cY-2UF" firstAttribute="top" secondItem="yFj-Ts-gA7" secondAttribute="bottom" constant="9" id="d9v-Fw-kFq"/>
+                                    <constraint firstItem="3PD-cY-2UF" firstAttribute="top" secondItem="yFj-Ts-gA7" secondAttribute="bottom" constant="9" id="ftn-vn-uKW"/>
+                                    <constraint firstItem="sh0-kO-Y49" firstAttribute="top" secondItem="yFj-Ts-gA7" secondAttribute="bottom" constant="9" id="gBS-y3-XsI"/>
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="top" secondItem="Non-9M-sas" secondAttribute="top" constant="12" id="gwz-hB-bAV"/>
                                     <constraint firstItem="x6S-7o-nuG" firstAttribute="trailing" secondItem="cCD-JN-Fbd" secondAttribute="trailing" id="hgO-P4-2KE"/>
                                     <constraint firstItem="yFj-Ts-gA7" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="45" id="iFd-99-anI"/>
@@ -209,28 +235,31 @@
                                         <exclude reference="cqn-q3-K6d"/>
                                         <exclude reference="hgO-P4-2KE"/>
                                         <exclude reference="rlD-GJ-Ahs"/>
+                                        <exclude reference="ftn-vn-uKW"/>
                                         <exclude reference="6Re-ut-5WX"/>
                                         <exclude reference="iFd-99-anI"/>
                                         <exclude reference="o3z-Fy-SPu"/>
                                         <exclude reference="AYO-dw-Ydk"/>
                                         <exclude reference="bcY-vx-RNT"/>
+                                        <exclude reference="gBS-y3-XsI"/>
+                                        <exclude reference="yC2-kc-djI"/>
                                     </mask>
                                 </variation>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1Y-vZ-yuZ">
-                                <rect key="frame" x="31" y="72" width="549" height="45"/>
+                                <rect key="frame" x="31" y="102" width="549" height="45"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Ui0-bw-Ui4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
-                                <color key="textColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="v1Y-vZ-yuZ" firstAttribute="leading" secondItem="MA5-5S-N6V" secondAttribute="leadingMargin" constant="-3" id="Ax9-3M-jTF"/>
                             <constraint firstItem="DeA-gt-oVf" firstAttribute="top" secondItem="Non-9M-sas" secondAttribute="bottom" constant="-29" id="AzH-rA-lI9"/>
@@ -251,12 +280,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="DetailsMapView" destination="cCD-JN-Fbd" id="gue-hY-y2Y"/>
                         <outlet property="cartAddress" destination="sh0-kO-Y49" id="Aja-Hy-2EX"/>
                         <outlet property="cartFood" destination="x6S-7o-nuG" id="sh6-eA-yOQ"/>
                         <outlet property="cartName" destination="v1Y-vZ-yuZ" id="fLM-pp-Wd0"/>
                         <outlet property="cartSchedule" destination="yFj-Ts-gA7" id="zOz-Hi-emt"/>
+                        <outlet property="cartType" destination="3PD-cY-2UF" id="uDC-Xn-KFL"/>
+                        <outlet property="generalScrollView" destination="Non-9M-sas" id="2fv-Dg-icc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-fJ-Bwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,6 +304,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="uAv-ml-0cf" kind="relationship" relationship="rootViewController" id="ehS-Es-JvH"/>
@@ -293,7 +328,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-Ke-NMQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-Ke-NMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <connections>
@@ -319,16 +354,18 @@
             </objects>
             <point key="canvasLocation" x="1562" y="536"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="pa3-U4-wOv">
             <objects>
-                <tabBarController id="Cvc-kK-R6H" sceneMemberID="viewController">
+                <tabBarController id="Cvc-kK-R6H" customClass="HCMFTabBarViewController" customModule="sfmobilefood" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Wa9-oX-Zou">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.89411764709999997" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="rH1-IO-szv" kind="relationship" relationship="viewControllers" id="bsS-R1-cRi"/>
@@ -343,12 +380,12 @@
         <scene sceneID="mvb-ai-cdT">
             <objects>
                 <navigationController storyboardIdentifier="tabsVC" title="Query" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rH1-IO-szv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Food Carts" image="cart-icon" id="mPa-w5-4v4"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <tabBarItem key="tabBarItem" title="Mobile Food Businesses" image="cart-icon" id="mPa-w5-4v4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dts-gA-IKk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>

@@ -9,9 +9,11 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManger:CLLocationManager = CLLocationManager()
     
     var data: [[String: AnyObject]]! = []
     
@@ -19,6 +21,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         updateWithData(data, animated: false)
+        
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        let authstate = CLLocationManager.authorizationStatus()
+        if(authstate == CLAuthorizationStatus.NotDetermined || authstate == CLAuthorizationStatus.Denied){
+            locationManger.requestWhenInUseAuthorization()
+        }
+        
     }
     
     func updateWithData(data: [[String: AnyObject]]!, animated: Bool) {

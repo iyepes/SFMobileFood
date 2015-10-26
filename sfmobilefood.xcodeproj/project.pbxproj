@@ -30,6 +30,8 @@
 		F8B7F5131BAD10770001EAAB /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
 		F8B7F5141BAD10E40001EAAB /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
 		F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */; };
+		F8C449541BDDC88300A03404 /* HCMFTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */; };
+		F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */; };
 		F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		F8B7F5091BAD0FC60001EAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B7F50A1BAD0FC60001EAAB /* SODAKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODAKitTests.swift; sourceTree = "<group>"; };
 		F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFDataInfo.swift; sourceTree = "<group>"; };
+		F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFTabBarViewController.swift; sourceTree = "<group>"; };
+		F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFGeneralParams.swift; sourceTree = "<group>"; };
 		F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,16 +167,14 @@
 		F85DA8281BA6159800744EFD /* SFMobileFood */ = {
 			isa = PBXGroup;
 			children = (
-				F85DA82B1BA6159800744EFD /* AppDelegate.swift */,
-				F85DA82D1BA6159800744EFD /* ViewController.swift */,
-				F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */,
 				F85DA82F1BA6159800744EFD /* Main.storyboard */,
 				F85DA8321BA6159800744EFD /* Images.xcassets */,
 				F85DA8341BA6159800744EFD /* LaunchScreen.xib */,
 				F85DA8291BA6159800744EFD /* Supporting Files */,
-				F85DA85F1BA698D800744EFD /* MapViewController.swift */,
-				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
-				F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */,
+				F85DA82B1BA6159800744EFD /* AppDelegate.swift */,
+				F85DA82D1BA6159800744EFD /* ViewController.swift */,
+				F8C449571BDE286300A03404 /* Controllers */,
+				F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */,
 				F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */,
 				F8C449521BDD550400A03404 /* Models */,
 			);
@@ -286,8 +288,20 @@
 			isa = PBXGroup;
 			children = (
 				F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */,
+				F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		F8C449571BDE286300A03404 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F85DA85F1BA698D800744EFD /* MapViewController.swift */,
+				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
+				F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */,
+				F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,8 +452,10 @@
 				F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */,
 				F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */,
 				F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */,
+				F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */,
 				F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */,
 				F85E71D31BB5D66D009927DD /* HCMFDismissSegue.swift in Sources */,
+				F8C449541BDDC88300A03404 /* HCMFTabBarViewController.swift in Sources */,
 				F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */,
 				F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */,
 				F85DA82C1BA6159800744EFD /* AppDelegate.swift in Sources */,

@@ -11,8 +11,6 @@ import MapKit
 
 class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
     
-    let appColor = "177EB7"
-    
     @IBOutlet weak var DetailsMapView: MKMapView!
     
     @IBOutlet weak var cartName: UILabel!
@@ -23,14 +21,24 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
     
     @IBOutlet weak var cartAddress: UILabel!
     
+    @IBOutlet weak var generalScrollView: UIScrollView!
+    
+    @IBOutlet weak var cartType: UILabel!
+    
     var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
+    var currentParams: HCMFGeneralParams = HCMFGeneralParams()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateWithData(currentItem, animated: false)
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(false)
+        
+        //cartFood.scrollRangeToVisible(NSRange(location:0, length:0))
+        cartFood.scrollEnabled = true
+    }
     
     func updateWithData(currentItem: HCMFDataInfo, animated: Bool) {
         
@@ -42,9 +50,11 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
         }
         
         cartName.text = currentItem.fullName
+        cartFood.scrollEnabled = false
         cartFood.text = currentItem.foodType
         cartAddress.text = currentItem.street
         cartSchedule.text = currentItem.schedule
+        cartType.text = currentItem.facilityType
 
         // Create annotations for the data
         var anns : [MKAnnotation] = []
@@ -62,11 +72,16 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
         }
         
         // Set the annotations and center the map
+        
         if (anns.count > 0) {
             DetailsMapView.addAnnotations(anns)
             let w = 1.0 / Double(anns.count)
             let r = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: lat*w, longitude: lon*w), 2000, 2000)
             DetailsMapView.setRegion(r, animated: animated)
+        } else {
+            let alert = UIAlertView(title: "No location", message: "This mobile food business has no location info available, see address.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        
         }
         
     }
