@@ -1,18 +1,24 @@
 //
-//  QueryViewController.swift
-//  SODASample
+//  HCMFCartTableViewController.swift
+//  sfmobilefood
 //
-//  Created by Frank A. Krueger on 8/10/14.
-//  Copyright (c) 2014 Socrata, Inc. All rights reserved.
+//  Created by Isabel Yepes on 27/10/15.
+//  Copyright © 2015 Hacemos Contactos. All rights reserved.
 //
 
 import UIKit
 
-class QueryViewController: UITableViewController {
-    
+class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+
+    @IBOutlet weak var tableView: UITableView!
+
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
-
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBOutlet weak var searchView: UIView!
+    
+    @IBOutlet weak var searchButton: UIButton!
     
     //Open Data URL and Registered access tokens in: http://dev.socrata.com/register
     let client = SODAClient(domain: "data.sfgov.org", token: "doOsHAaYFknfIi8v6gxUHVEzw")
@@ -25,17 +31,30 @@ class QueryViewController: UITableViewController {
     
     var currentParams: HCMFGeneralParams = HCMFGeneralParams()
     
+    let refreshControl = UIRefreshControl ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = currentParams.backgroundColor
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchTextField.delegate = self
+        tableView.backgroundColor = currentParams.backgroundColor
+        self.registerForKeyboardNotifications()
         
         // Create a pull-to-refresh control
-        refreshControl = UIRefreshControl ()
-        refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         loadingActivityIndicator.startAnimating()
+        searchButton.hidden = true
+        searchTextField.hidden = true
         // Auto-refresh
         refresh(self)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     /// Asynchronous performs the data query then updates the UI
@@ -60,10 +79,12 @@ class QueryViewController: UITableViewController {
             }
             
             // Update the UI
-            self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
+            self.searchButton.hidden = false
+            self.searchTextField.hidden = false
             self.updateMap(animated: true)
         }
+        refreshControl.endRefreshing()
     }
     
     /// Finds the map controller and updates its data
@@ -77,32 +98,65 @@ class QueryViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: (UITableView!), didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
+
+    @IBAction func searchButtonPressed(sender: AnyObject) {
+        searchView.endEditing(true)
+        refresh(self.tableView)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         /* //Show the map
         if let tabs = (self.parentViewController?.parentViewController as? UITabBarController) {
-            tabs.selectedIndex = 1
+        tabs.selectedIndex = 1
         }
         */
+        searchView.endEditing(true)
         currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         performSegueWithIdentifier("OpenCartDetails", sender: self)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1 }
+    //func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1 }
     
-    override func tableView(tableView: (UITableView!), numberOfRowsInSection section: Int) -> Int {
-            return data.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-            let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
-            let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
-            c.cartName.text = cellData.fullName
-            c.cartFood.text = cellData.foodType
-            c.cartAddress.text = cellData.street
-            return c
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
+        let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        c.cartName.text = cellData.fullName
+        c.cartFood.text = cellData.foodType
+        c.cartAddress.text = cellData.street
+        return c
+    }
+    
+    //MARK: - Keyboard Management Methods
+    
+    // Call this method somewhere in your view controller setup code.
+    func registerForKeyboardNotifications() {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self,
+            selector: "keyboardWillBeShown:",
+            name: UIKeyboardWillShowNotification,
+            object: nil)
+        notificationCenter.addObserver(self,
+            selector: "keyboardWillBeHidden:",
+            name: UIKeyboardWillHideNotification,
+            object: nil)
+    }
+    
+    // Called when the UIKeyboardDidShowNotification is sent.
+    func keyboardWillBeShown(sender: NSNotification) {
         
     }
+    
+    // Called when the UIKeyboardWillHideNotification is sent
+    func keyboardWillBeHidden(sender: NSNotification) {
+        
+    }
+    
+    
     
     // MARK: - Navigation
     
@@ -114,5 +168,5 @@ class QueryViewController: UITableViewController {
             
         }
     }
-    
+
 }

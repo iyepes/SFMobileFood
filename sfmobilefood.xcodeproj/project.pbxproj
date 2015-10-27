@@ -32,6 +32,7 @@
 		F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */; };
 		F8C449541BDDC88300A03404 /* HCMFTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */; };
 		F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */; };
+		F8D6BC221BDFD97E00C45F8C /* HCMFCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BC211BDFD97E00C45F8C /* HCMFCartTableViewController.swift */; };
 		F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFDataInfo.swift; sourceTree = "<group>"; };
 		F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFTabBarViewController.swift; sourceTree = "<group>"; };
 		F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFGeneralParams.swift; sourceTree = "<group>"; };
+		F8D6BC211BDFD97E00C45F8C /* HCMFCartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCartTableViewController.swift; sourceTree = "<group>"; };
 		F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +300,7 @@
 			children = (
 				F85DA85F1BA698D800744EFD /* MapViewController.swift */,
 				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
+				F8D6BC211BDFD97E00C45F8C /* HCMFCartTableViewController.swift */,
 				F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */,
 				F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */,
 			);
@@ -453,6 +456,7 @@
 				F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */,
 				F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */,
 				F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */,
+				F8D6BC221BDFD97E00C45F8C /* HCMFCartTableViewController.swift in Sources */,
 				F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */,
 				F85E71D31BB5D66D009927DD /* HCMFDismissSegue.swift in Sources */,
 				F8C449541BDDC88300A03404 /* HCMFTabBarViewController.swift in Sources */,
