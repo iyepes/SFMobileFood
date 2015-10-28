@@ -20,17 +20,22 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var searchButton: UIButton!
     
+ 
+    var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
+    let currentParams: HCMFGeneralParams = HCMFGeneralParams()
+
     //Open Data URL and Registered access tokens in: http://dev.socrata.com/register
     let client = SODAClient(domain: "data.sfgov.org", token: "doOsHAaYFknfIi8v6gxUHVEzw")
+    let dataSetName = "rqzj-sfat"
+    let dataFilter = "status = 'APPROVED'"
+    let orderedBy = "applicant"
     
+    
+    //Cell reusable ID
     let cellId = "DetailCell"
-    
+    //Data collector
     var data: [[String: AnyObject]]! = []
-    
-    var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
-    
-    var currentParams: HCMFGeneralParams = HCMFGeneralParams()
-    
+    //Animating refresh indicator for table view
     let refreshControl = UIRefreshControl ()
     
     override func viewDidLoad() {
@@ -60,13 +65,11 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     /// Asynchronous performs the data query then updates the UI
     func refresh (sender: AnyObject!) {
         
-        //let cngQuery = client.queryDataset("3k2p-39jp").filter("within_circle(incident_location, 47.59815, -122.334540, 500) AND event_clearance_group IS NOT NULL")
-        
+        //San Francisco Mobile Food Facility Permit
         //https://data.sfgov.org/resource/rqzj-sfat.json
         
-        let cngQuery = client.queryDataset("rqzj-sfat").filter("status = 'APPROVED'")
-        
-        cngQuery.orderAscending("applicant").get { res in
+        let cngQuery = client.queryDataset(dataSetName).filter(dataFilter)
+        cngQuery.orderAscending(orderedBy).get { res in
             switch res {
             case .Dataset (let data):
                 // Update our data
@@ -87,6 +90,31 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         refreshControl.endRefreshing()
     }
     
+    /// Asynchronous performs the data query then updates the UI
+    func refreshSearch (sender: AnyObject!, searchTerm : String) {
+        
+        //San Francisco Mobile Food Facility Permit
+        //https://data.sfgov.org/resource/rqzj-sfat.json
+        
+        let cngQuery = client.queryDataset(dataSetName).filter(dataFilter).fullText(searchTerm)
+        cngQuery.orderAscending(orderedBy).get { res in
+            switch res {
+            case .Dataset (let data):
+                // Update our data
+                self.data = data
+                self.loadingActivityIndicator.stopAnimating()
+            case .Error (let err):
+                let alert = UIAlertView(title: "Error Refreshing", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+                self.loadingActivityIndicator.stopAnimating()
+            }
+            // Update the UI
+            self.tableView.reloadData()
+            self.updateMap(animated: true)
+        }
+    }
+    
+    
     /// Finds the map controller and updates its data
     private func updateMap(animated animated: Bool) {
         if let tabs = (self.parentViewController?.parentViewController as? UITabBarController) {
@@ -97,11 +125,11 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
     }
-    
 
     @IBAction func searchButtonPressed(sender: AnyObject) {
         searchView.endEditing(true)
-        refresh(self.tableView)
+        self.loadingActivityIndicator.startAnimating()
+        refreshSearch(self.tableView, searchTerm: searchTextField.text!)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

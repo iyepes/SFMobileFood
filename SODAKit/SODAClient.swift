@@ -11,7 +11,7 @@ import Foundation
 // Reference: http://dev.socrata.com/consumers/getting-started.html
 
 /// The default number of items to return in SODAClient.queryDataset calls.
-let SODADefaultLimit = 1000
+let SODADefaultLimit = 2000
 
 /// The result of an asynchronous SODAClient.queryDataset call. It can either succeed with data or fail with an error.
 enum SODADatasetResult {
@@ -134,9 +134,12 @@ class SODAClient {
         var s = ""
         var head = ""
         for (key, value) in params {
-            let sk = key.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-            let sv = value.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-            s += "\(head)\(sk)=\(sv)"
+            //let sk = key.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            let sk = key.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+            //let sv = value.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            let sv = value.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+            //s += "\(head)\(sk)=\(sv)"
+            s += head+sk!+"="+sv!
             head = "&"
         }
         return s

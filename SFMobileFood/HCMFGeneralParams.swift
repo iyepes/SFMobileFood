@@ -60,6 +60,7 @@ extension UIImage {
 
 class HCMFGeneralParams: NSObject {
 
+    //App appereance
     let appColor:UIColor = UIColor(hexString: "177EB7",alpha: 1.0)
     let selectedColor:UIColor = UIColor(hexString: "07283B",alpha: 1.0)
     let textColor:UIColor = UIColor(hexString: "FFFFFF",alpha: 1.0)
