@@ -446,6 +446,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -456,7 +457,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP7-UB-iRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-102" y="1095"/>
+            <point key="canvasLocation" x="561" y="992"/>
         </scene>
         <!--Map-->
         <scene sceneID="wBp-O1-Y1G">
@@ -490,11 +491,12 @@
                     <navigationItem key="navigationItem" title="Map View" id="GBh-VA-A7V"/>
                     <connections>
                         <outlet property="mapView" destination="cr9-Ke-NMQ" id="pBf-kK-gju"/>
+                        <segue destination="VNz-t9-Rty" kind="show" identifier="OpenCartDetailsFromMap" id="Bx1-MP-fhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BL9-Gz-afw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="1095"/>
+            <point key="canvasLocation" x="1402" y="992"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="pa3-U4-wOv">
@@ -571,4 +573,7 @@
         <image name="magnifier13-white" width="32" height="32"/>
         <image name="world90" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bx1-MP-fhM"/>
+    </inferredMetricsTieBreakers>
 </document>

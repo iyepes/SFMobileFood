@@ -32,6 +32,7 @@
 		F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */; };
 		F8C449541BDDC88300A03404 /* HCMFTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */; };
 		F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */; };
+		F8D3CB271BE1469E000404ED /* HCMFCustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3CB261BE1469D000404ED /* HCMFCustomAnnotation.swift */; };
 		F8D6BC221BDFD97E00C45F8C /* HCMFCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BC211BDFD97E00C45F8C /* HCMFCartTableViewController.swift */; };
 		F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFDataInfo.swift; sourceTree = "<group>"; };
 		F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFTabBarViewController.swift; sourceTree = "<group>"; };
 		F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFGeneralParams.swift; sourceTree = "<group>"; };
+		F8D3CB261BE1469D000404ED /* HCMFCustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCustomAnnotation.swift; sourceTree = "<group>"; };
 		F8D6BC211BDFD97E00C45F8C /* HCMFCartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCartTableViewController.swift; sourceTree = "<group>"; };
 		F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFCartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,7 +180,7 @@
 				F8C449571BDE286300A03404 /* Controllers */,
 				F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */,
 				F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */,
-				F8C449521BDD550400A03404 /* Models */,
+				F8C449521BDD550400A03404 /* Models_and_Extensions */,
 			);
 			path = SFMobileFood;
 			sourceTree = "<group>";
@@ -286,13 +288,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F8C449521BDD550400A03404 /* Models */ = {
+		F8C449521BDD550400A03404 /* Models_and_Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */,
 				F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */,
+				F8D3CB261BE1469D000404ED /* HCMFCustomAnnotation.swift */,
 			);
-			name = Models;
+			name = Models_and_Extensions;
 			sourceTree = "<group>";
 		};
 		F8C449571BDE286300A03404 /* Controllers */ = {
@@ -460,6 +463,7 @@
 				F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */,
 				F85E71D31BB5D66D009927DD /* HCMFDismissSegue.swift in Sources */,
 				F8C449541BDDC88300A03404 /* HCMFTabBarViewController.swift in Sources */,
+				F8D3CB271BE1469E000404ED /* HCMFCustomAnnotation.swift in Sources */,
 				F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */,
 				F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */,
 				F85DA82C1BA6159800744EFD /* AppDelegate.swift in Sources */,

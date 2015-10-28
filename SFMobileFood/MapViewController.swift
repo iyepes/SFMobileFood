@@ -17,6 +17,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var data: [[String: AnyObject]]! = []
     
+    var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +54,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         var lona : CLLocationDegrees = 0.0
         
         // Create annotations for the data
-        var anns : [MKAnnotation] = []
+        //var anns : [MKAnnotation] = []
+        var annotationsArray : [HCMFCustomAnnotation] = []
         for item in data {
             let cellData = HCMFDataInfo(item: item) as HCMFDataInfo
             if cellData.hasLocation() {
@@ -60,21 +63,72 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let lon = cellData.lon
                 lata += lat
                 lona += lon
-                let a = MKPointAnnotation()
-                a.title = cellData.fullName
-                a.subtitle = cellData.foodType
-                a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
-                anns.append(a)
+                //let a = MKPointAnnotation()
+                let a2 = HCMFCustomAnnotation(title: cellData.fullName, subtitle: cellData.foodType, coordinate: CLLocationCoordinate2D (latitude: lat, longitude: lon), itemData: item)
+                //a.title = cellData.fullName
+                //a.subtitle = cellData.foodType
+                //a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
+                //anns.append(a)
+                annotationsArray.append(a2)
             }
         }
         
         // Set the annotations and center the map
-        if (anns.count > 0) {
-            mapView.addAnnotations(anns)
-            let w = 1.0 / Double(anns.count)
+        if (annotationsArray.count > 0) {
+            mapView.addAnnotations(annotationsArray)
+
+            /*
+            for ann in annotationsArray {
+                
+            }
+            */
+            let w = 1.0 / Double(annotationsArray.count)
             let r = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: lata*w, longitude: lona*w), 2000, 2000)
             mapView.setRegion(r, animated: animated)
         }
     }
+    
+    //Change the map delegate to have a custom view
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            //return nil so map view draws "blue dot" for standard user location
+            return nil
+        }
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.pinColor = .Red
+            pinView!.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIButton
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        return pinView
+    }
+
+    //Call if the pin is pressed
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
+        calloutAccessoryControlTapped control: UIControl) {
+            let location = view.annotation as! HCMFCustomAnnotation
+            let item: [String: AnyObject] = location.itemData
+            currentItem = HCMFDataInfo(item: item)
+            performSegueWithIdentifier("OpenCartDetailsFromMap", sender: self)
+            //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "OpenCartDetailsFromMap") {
+            var destinationViewController = segue.destinationViewController as! HCMFDetailViewViewController
+            destinationViewController.currentItem = currentItem
+            
+        }
+    }
+    
+    
 }
 
