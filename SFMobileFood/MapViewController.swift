@@ -22,15 +22,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateWithData(data, animated: false)
-        
+        //Enable user location tracking
         locationManger.delegate = self
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
         let authstate = CLLocationManager.authorizationStatus()
         if(authstate == CLAuthorizationStatus.NotDetermined || authstate == CLAuthorizationStatus.Denied){
             locationManger.requestWhenInUseAuthorization()
         }
-        
+        //Update data
+        updateWithData(data, animated: false)
     }
     
     func updateWithData(data: [[String: AnyObject]]!, animated: Bool) {
@@ -43,7 +43,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
         // Clear old annotations
-        
         if mapView.annotations.count > 0 {
             let ex = mapView.annotations
             mapView.removeAnnotations(ex)
@@ -54,7 +53,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         var lona : CLLocationDegrees = 0.0
         
         // Create annotations for the data
-        //var anns : [MKAnnotation] = []
         var annotationsArray : [HCMFCustomAnnotation] = []
         for item in data {
             let cellData = HCMFDataInfo(item: item) as HCMFDataInfo
@@ -63,28 +61,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let lon = cellData.lon
                 lata += lat
                 lona += lon
-                //let a = MKPointAnnotation()
-                let a2 = HCMFCustomAnnotation(title: cellData.fullName, subtitle: cellData.foodType, coordinate: CLLocationCoordinate2D (latitude: lat, longitude: lon), itemData: item)
-                //a.title = cellData.fullName
-                //a.subtitle = cellData.foodType
-                //a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
-                //anns.append(a)
-                annotationsArray.append(a2)
+                let newAnnotation = HCMFCustomAnnotation(title: cellData.fullName, subtitle: cellData.foodType, coordinate: CLLocationCoordinate2D (latitude: lat, longitude: lon), itemData: item)
+                annotationsArray.append(newAnnotation)
             }
         }
         
         // Set the annotations and center the map
         if (annotationsArray.count > 0) {
+            //Add annotations to map
             mapView.addAnnotations(annotationsArray)
-
             /*
-            for ann in annotationsArray {
-                
-            }
+            if let currentLocation = locationManger.location {
+                //Center if there's user location
+                let r = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 2000, 2000)
+                mapView.setRegion(r, animated: animated)
+            } else {
+                //Center in the middle of annotations if there's no user location
             */
-            let w = 1.0 / Double(annotationsArray.count)
-            let r = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: lata*w, longitude: lona*w), 2000, 2000)
-            mapView.setRegion(r, animated: animated)
+                let w = 1.0 / Double(annotationsArray.count)
+                let r = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: lata*w, longitude: lona*w), 2000, 2000)
+                mapView.setRegion(r, animated: animated)
+            //}
         }
     }
     
@@ -115,8 +112,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let item: [String: AnyObject] = location.itemData
             currentItem = HCMFDataInfo(item: item)
             performSegueWithIdentifier("OpenCartDetailsFromMap", sender: self)
-            //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            
     }
     
     // MARK: - Navigation

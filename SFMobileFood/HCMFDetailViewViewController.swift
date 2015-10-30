@@ -35,9 +35,7 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(false)
-        
-        //cartFood.scrollRangeToVisible(NSRange(location:0, length:0))
-        cartFood.scrollEnabled = true
+        //cartFood.scrollEnabled = true
     }
     
     func updateWithData(currentItem: HCMFDataInfo, animated: Bool) {
@@ -50,6 +48,7 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
         }
         
         cartName.text = currentItem.fullName
+        // disable scroll to force growth
         cartFood.scrollEnabled = false
         cartFood.text = currentItem.foodType
         cartAddress.text = currentItem.street
@@ -65,8 +64,8 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
             lat = currentItem.lat
             lon = currentItem.lon
             let a = MKPointAnnotation()
-            a.title = currentItem.fullName
-            a.subtitle = currentItem.foodType
+            //a.title = currentItem.fullName
+            //a.subtitle = currentItem.foodType
             a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
             anns.append(a)
         }

@@ -22,7 +22,8 @@ class HCMFCartTableViewCell: UITableViewCell {
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        // line commented to avoid cell to be highligted when selected
+        //super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }

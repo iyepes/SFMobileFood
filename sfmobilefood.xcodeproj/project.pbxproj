@@ -22,7 +22,6 @@
 		F85DA8581BA618AB00744EFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */; };
 		F85DA85A1BA618B800744EFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DA8591BA618B800744EFD /* UIKit.framework */; };
 		F85DA8601BA698D800744EFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA85F1BA698D800744EFD /* MapViewController.swift */; };
-		F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8611BA6991A00744EFD /* QueryViewController.swift */; };
 		F85DA8EB1BA6A4CA00744EFD /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */; };
 		F85E71D31BB5D66D009927DD /* HCMFDismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */; };
 		F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */; };
@@ -80,7 +79,6 @@
 		F85DA8571BA618AB00744EFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F85DA8591BA618B800744EFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F85DA85F1BA698D800744EFD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		F85DA8611BA6991A00744EFD /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		F85DA8E71BA6A4CA00744EFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85DA8E81BA6A4CA00744EFD /* SODAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SODAClient.swift; sourceTree = "<group>"; };
 		F85DA8E91BA6A4CA00744EFD /* SODAKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAKit.h; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				F85DA85F1BA698D800744EFD /* MapViewController.swift */,
-				F85DA8611BA6991A00744EFD /* QueryViewController.swift */,
 				F8D6BC211BDFD97E00C45F8C /* HCMFCartTableViewController.swift */,
 				F85E71D41BB895BE009927DD /* HCMFDetailViewViewController.swift */,
 				F8C449531BDDC88300A03404 /* HCMFTabBarViewController.swift */,
@@ -457,7 +454,6 @@
 				F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */,
 				F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */,
 				F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */,
-				F85DA8621BA6991A00744EFD /* QueryViewController.swift in Sources */,
 				F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */,
 				F8D6BC221BDFD97E00C45F8C /* HCMFCartTableViewController.swift in Sources */,
 				F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */,

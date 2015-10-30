@@ -24,7 +24,9 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
     let currentParams: HCMFGeneralParams = HCMFGeneralParams()
 
-    //Open Data URL and Registered access tokens in: http://dev.socrata.com/register
+    //Open Data URL and Registered access tokens http://dev.socrata.com/register
+    //San Francisco Mobile Food Facility Permit
+    //https://data.sfgov.org/resource/rqzj-sfat.json
     let client = SODAClient(domain: "data.sfgov.org", token: "doOsHAaYFknfIi8v6gxUHVEzw")
     let dataSetName = "rqzj-sfat"
     let dataFilter = "status = 'APPROVED'"
@@ -65,8 +67,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     /// Asynchronous performs the data query then updates the UI
     func refresh (sender: AnyObject!) {
         
-        //San Francisco Mobile Food Facility Permit
-        //https://data.sfgov.org/resource/rqzj-sfat.json
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         let cngQuery = client.queryDataset(dataSetName).filter(dataFilter)
         cngQuery.orderAscending(orderedBy).get { res in
@@ -75,10 +76,12 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
                 // Update our data
                 self.data = data
                 self.loadingActivityIndicator.stopAnimating()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
                 let alert = UIAlertView(title: "Error Refreshing", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 self.loadingActivityIndicator.stopAnimating()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             }
             
             // Update the UI
@@ -93,8 +96,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     /// Asynchronous performs the data query then updates the UI
     func refreshSearch (sender: AnyObject!, searchTerm : String) {
         
-        //San Francisco Mobile Food Facility Permit
-        //https://data.sfgov.org/resource/rqzj-sfat.json
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         let cngQuery = client.queryDataset(dataSetName).filter(dataFilter).fullText(searchTerm)
         cngQuery.orderAscending(orderedBy).get { res in
@@ -103,10 +105,12 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
                 // Update our data
                 self.data = data
                 self.loadingActivityIndicator.stopAnimating()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
                 let alert = UIAlertView(title: "Error Refreshing", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 self.loadingActivityIndicator.stopAnimating()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             }
             // Update the UI
             self.tableView.reloadData()
@@ -133,11 +137,6 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        /* //Show the map
-        if let tabs = (self.parentViewController?.parentViewController as? UITabBarController) {
-        tabs.selectedIndex = 1
-        }
-        */
         searchView.endEditing(true)
         currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         performSegueWithIdentifier("OpenCartDetails", sender: self)
