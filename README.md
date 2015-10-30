@@ -16,4 +16,6 @@ This first version was created over SODA Swift Beta SDK example https://github.c
 
 Icon made by http://www.freepik.com from http://www.flaticon.com is licensed under Creative Commons BY 3.0 http://creativecommons.org/licenses/by/3.0/
 
-<div>Icons made by <a href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+Icons made by <a href="http://www.flaticon.com/authors/simpleicon" title=" SimpleIcon "> SimpleIcon </a> from <a href="http://www.flaticon.com" title="Flaticon"> www.flaticon.com </a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title=" Creative Commons BY 3.0 "> CC BY 3.0</a>
+
+Icons made by <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
