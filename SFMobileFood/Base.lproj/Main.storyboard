@@ -230,8 +230,6 @@
                                     </textField>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="IAv-hg-dJw" secondAttribute="trailing" constant="22" id="Bre-bD-MB4"/>
@@ -246,41 +244,95 @@
                                     <outletCollection property="gestureRecognizers" destination="bZg-om-wha" appends="YES" id="mbU-af-KL4"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="138" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
+                            <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
                                 <rect key="frame" x="0.0" y="122" width="600" height="429"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="429" id="cQ3-yK-WSq"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="138" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="600" height="138"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="nYm-7h-2fL" id="ff9-aW-PEW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="137"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="120" id="2sL-Km-xbY" customClass="HCMFHeaderTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2sL-Km-xbY" id="sMV-D3-IS3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l6-uA-GvU">
-                                                    <rect key="frame" x="8" y="8" width="584" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCq-6r-69u">
+                                                    <rect key="frame" x="68" y="8" width="524" height="23"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-Bq-LhE">
-                                                    <rect key="frame" x="8" y="66" width="584" height="67"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0I9-7b-aQF">
+                                                    <rect key="frame" x="8" y="43" width="584" height="67"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="67" id="I3C-ih-X4h"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="1z4-P5-Gyc"/>
+                                                        <constraint firstAttribute="height" constant="67" id="oLo-Uj-fmk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand38-blue" highlightedImage="expand38-white" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-Zx-HPr">
+                                                    <rect key="frame" x="8" y="9" width="52" height="32"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="52" id="9bV-wX-4gI"/>
+                                                        <constraint firstAttribute="height" constant="32" id="wB9-fH-yov"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand39-blue" highlightedImage="expand39-white" translatesAutoresizingMaskIntoConstraints="NO" id="1RI-zi-Fdb">
+                                                    <rect key="frame" x="8" y="8" width="52" height="32"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="52" id="2RL-1J-0PN"/>
+                                                        <constraint firstAttribute="height" constant="32" id="PYE-Cu-Lav"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="pCq-6r-69u" firstAttribute="leading" secondItem="VdW-Zx-HPr" secondAttribute="trailing" constant="8" id="2PO-eV-rzR"/>
+                                                <constraint firstItem="1RI-zi-Fdb" firstAttribute="top" secondItem="sMV-D3-IS3" secondAttribute="topMargin" id="PV7-do-npG"/>
+                                                <constraint firstItem="1RI-zi-Fdb" firstAttribute="leading" secondItem="sMV-D3-IS3" secondAttribute="leadingMargin" id="VP4-K3-eph"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="pCq-6r-69u" secondAttribute="leading" id="Z2u-Ff-mky"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0I9-7b-aQF" secondAttribute="trailing" id="adg-EK-JhB"/>
+                                                <constraint firstAttribute="topMargin" secondItem="pCq-6r-69u" secondAttribute="top" id="eKf-qb-hgZ"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="0I9-7b-aQF" secondAttribute="leading" id="kDQ-xd-TSU"/>
+                                                <constraint firstItem="0I9-7b-aQF" firstAttribute="top" secondItem="pCq-6r-69u" secondAttribute="bottom" constant="12" id="mu9-21-Spb"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="VdW-Zx-HPr" secondAttribute="leading" id="pQl-RS-huU"/>
+                                                <constraint firstItem="VdW-Zx-HPr" firstAttribute="top" secondItem="sMV-D3-IS3" secondAttribute="topMargin" constant="1" id="pmM-Zv-129"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pCq-6r-69u" secondAttribute="trailing" id="uOf-lx-gJa"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Z2u-Ff-mky"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="cartFood" destination="0I9-7b-aQF" id="iiz-Xm-rQG"/>
+                                            <outlet property="cartName" destination="pCq-6r-69u" id="DfN-BB-n2f"/>
+                                            <outlet property="collapseArrow" destination="1RI-zi-Fdb" id="sDA-rL-Vso"/>
+                                            <outlet property="expandArrow" destination="VdW-Zx-HPr" id="CS7-fW-e51"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="44" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="170" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="nYm-7h-2fL" id="ff9-aW-PEW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-f2-Qab">
-                                                    <rect key="frame" x="8" y="38" width="584" height="23"/>
+                                                    <rect key="frame" x="28" y="8" width="564" height="23"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,16 +341,9 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="cCk-Bq-LhE" secondAttribute="leading" id="64B-09-hIi"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="W3Y-f2-Qab" secondAttribute="leading" id="AtA-A2-xEK"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cCk-Bq-LhE" secondAttribute="bottom" constant="-4" id="ND1-qB-zb4"/>
-                                                <constraint firstItem="cCk-Bq-LhE" firstAttribute="top" secondItem="W3Y-f2-Qab" secondAttribute="bottom" constant="5" id="SU9-P5-cDH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0l6-uA-GvU" secondAttribute="trailing" id="U07-wz-fF6"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="0l6-uA-GvU" secondAttribute="leading" id="Udi-Ks-hcZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cCk-Bq-LhE" secondAttribute="trailing" id="YIX-27-gKQ"/>
-                                                <constraint firstItem="W3Y-f2-Qab" firstAttribute="top" secondItem="0l6-uA-GvU" secondAttribute="bottom" constant="7" id="gpG-5B-8I6"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="W3Y-f2-Qab" secondAttribute="leading" constant="-20" id="AtA-A2-xEK"/>
+                                                <constraint firstAttribute="topMargin" secondItem="W3Y-f2-Qab" secondAttribute="top" id="Fe5-BK-g8L"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="W3Y-f2-Qab" secondAttribute="trailing" id="oFS-H0-ZPm"/>
-                                                <constraint firstAttribute="topMargin" secondItem="0l6-uA-GvU" secondAttribute="top" id="z0H-bU-mRH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -306,8 +351,6 @@
                                         <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="cartAddress" destination="W3Y-f2-Qab" id="1Q3-td-Tv8"/>
-                                            <outlet property="cartFood" destination="cCk-Bq-LhE" id="JuP-Zy-f8u"/>
-                                            <outlet property="cartName" destination="0l6-uA-GvU" id="gew-2T-ed7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -462,6 +505,10 @@
     </scenes>
     <resources>
         <image name="cart-icon" width="30" height="30"/>
+        <image name="expand38-blue" width="52" height="32"/>
+        <image name="expand38-white" width="52" height="32"/>
+        <image name="expand39-blue" width="52" height="32"/>
+        <image name="expand39-white" width="52" height="32"/>
         <image name="magnifier13-deepblue" width="32" height="32"/>
         <image name="magnifier13-white" width="32" height="32"/>
         <image name="world90" width="32" height="32"/>

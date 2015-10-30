@@ -36,6 +36,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     //Cell reusable ID
     let cellId = "DetailCell"
+    let headerCellId = "HeaderCell"
     //Data collector
     var data: [[String: AnyObject]]! = []
     //Animating refresh indicator for table view
@@ -199,13 +200,29 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         return listItems.items[section].count
     }
     
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let c = tableView.dequeueReusableCellWithIdentifier(headerCellId) as! HCMFHeaderTableViewCell!
+        c.cartName.text = listItems.sections[section][0]
+        c.cartFood.text = listItems.sections[section][1]
+        return c.contentView
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
         //let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         let cellData = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
-        c.cartName.text = cellData.fullName
-        c.cartFood.text = cellData.foodType
+        //c.cartName.text = cellData.fullName
+        //c.cartFood.text = cellData.foodType
         c.cartAddress.text = cellData.street
         return c
     }

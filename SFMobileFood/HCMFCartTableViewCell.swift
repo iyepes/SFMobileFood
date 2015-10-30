@@ -10,11 +10,11 @@ import UIKit
 
 class HCMFCartTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cartName: UILabel!
+    //@IBOutlet weak var cartName: UILabel!
     
     @IBOutlet weak var cartAddress: UILabel!
     
-    @IBOutlet weak var cartFood: UILabel!
+    //@IBOutlet weak var cartFood: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,8 +14,13 @@ class HCMFHeaderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cartFood: UILabel!
     
+    @IBOutlet weak var expandArrow: UIImageView!
+    
+    @IBOutlet weak var collapseArrow: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        collapseArrow.hidden = true
         // Initialization code
     }
 
