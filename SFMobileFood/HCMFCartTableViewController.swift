@@ -23,6 +23,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
  
     var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
     let currentParams: HCMFGeneralParams = HCMFGeneralParams()
+    var listItems: HCMFListItems = HCMFListItems()
 
     //Open Data URL and Registered access tokens http://dev.socrata.com/register
     //San Francisco Mobile Food Facility Permit
@@ -64,6 +65,34 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    
+    func updateListItems (data: [[String: AnyObject]]!) -> HCMFListItems {
+        let listItems: HCMFListItems = HCMFListItems()
+        
+        if data.count > 0 {
+            var currentName: String = ""
+            var sectionHeader:[String] = []
+            var sectionData: [[String: AnyObject]] = []
+            for item in data {
+                let itemData = HCMFDataInfo(item: item) as HCMFDataInfo
+                if (itemData.fullName == currentName){
+                    sectionData = sectionData + [item]
+                } else if (currentName == "") {
+                    currentName = itemData.fullName
+                    sectionHeader = [itemData.fullName , itemData.foodType]
+                    sectionData = [item]
+                } else {
+                    currentName = itemData.fullName
+                    listItems.addSection(sectionHeader, item: sectionData)
+                    sectionHeader = [itemData.fullName , itemData.foodType]
+                    sectionData = [item]
+                }
+            }
+            listItems.addSection(sectionHeader, item: sectionData)
+        }
+        return listItems
+    }
+    
     /// Asynchronous performs the full query then updates the UI
     func refresh (sender: AnyObject!) {
         
@@ -75,6 +104,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             case .Dataset (let data):
                 // Update our data
                 self.data = data
+                self.listItems = self.updateListItems(data)
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
@@ -104,10 +134,11 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             case .Dataset (let data):
                 // Update our data
                 self.data = data
+                self.listItems = self.updateListItems(data)
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
-                let alert = UIAlertView(title: "Error Refreshing", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
+                let alert = UIAlertView(title: "Error Refreshing, try again later.", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -142,20 +173,37 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         searchView.endEditing(true)
-        currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        //currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        currentItem = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
         performSegueWithIdentifier("OpenCartDetails", sender: self)
     }
     
-    //func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1 }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return listItems.sections.count
+    }
+    
+    func tableView(tableView: UITableView, canCollapseSection section: Int) -> Bool {
+        if section > 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return listItems.sections[section][0]
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        //return data.count
+        return listItems.items[section].count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
-        let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        //let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
+        let cellData = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
         c.cartName.text = cellData.fullName
         c.cartFood.text = cellData.foodType
         c.cartAddress.text = cellData.street

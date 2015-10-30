@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F84E64AE1BE3BC5C000B5CAD /* HCMFListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E64AD1BE3BC5C000B5CAD /* HCMFListItems.swift */; };
+		F84E64B11BE3D73E000B5CAD /* HCMFHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E64AF1BE3D73E000B5CAD /* HCMFHeaderTableViewCell.swift */; };
+		F84E64B21BE3D73E000B5CAD /* HCMFHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84E64B01BE3D73E000B5CAD /* HCMFHeaderTableViewCell.xib */; };
+		F84E64B61BE3E2FA000B5CAD /* HCMFHeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84E64B51BE3E2FA000B5CAD /* HCMFHeaderCellView.xib */; };
+		F84E64B81BE3E349000B5CAD /* HCMFHeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E64B71BE3E349000B5CAD /* HCMFHeaderCellView.swift */; };
 		F85DA82C1BA6159800744EFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA82B1BA6159800744EFD /* AppDelegate.swift */; };
 		F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85DA82D1BA6159800744EFD /* ViewController.swift */; };
 		F85DA8311BA6159800744EFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85DA82F1BA6159800744EFD /* Main.storyboard */; };
@@ -60,6 +65,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F84E64AD1BE3BC5C000B5CAD /* HCMFListItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFListItems.swift; sourceTree = "<group>"; };
+		F84E64AF1BE3D73E000B5CAD /* HCMFHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		F84E64B01BE3D73E000B5CAD /* HCMFHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCMFHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		F84E64B51BE3E2FA000B5CAD /* HCMFHeaderCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCMFHeaderCellView.xib; sourceTree = "<group>"; };
+		F84E64B71BE3E349000B5CAD /* HCMFHeaderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMFHeaderCellView.swift; sourceTree = "<group>"; };
 		F85DA8261BA6159800744EFD /* sfmobilefood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfmobilefood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85DA82A1BA6159800744EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85DA82B1BA6159800744EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,7 +187,11 @@
 				F85DA82D1BA6159800744EFD /* ViewController.swift */,
 				F8C449571BDE286300A03404 /* Controllers */,
 				F85E71D21BB5D66D009927DD /* HCMFDismissSegue.swift */,
+				F84E64B51BE3E2FA000B5CAD /* HCMFHeaderCellView.xib */,
+				F84E64B71BE3E349000B5CAD /* HCMFHeaderCellView.swift */,
 				F8DAD7461BD98DCF008B1F3B /* HCMFCartTableViewCell.swift */,
+				F84E64AF1BE3D73E000B5CAD /* HCMFHeaderTableViewCell.swift */,
+				F84E64B01BE3D73E000B5CAD /* HCMFHeaderTableViewCell.xib */,
 				F8C449521BDD550400A03404 /* Models_and_Extensions */,
 			);
 			path = SFMobileFood;
@@ -292,6 +306,7 @@
 				F8C449501BDD420F00A03404 /* HCMFDataInfo.swift */,
 				F8C449551BDDCA7D00A03404 /* HCMFGeneralParams.swift */,
 				F8D3CB261BE1469D000404ED /* HCMFCustomAnnotation.swift */,
+				F84E64AD1BE3BC5C000B5CAD /* HCMFListItems.swift */,
 			);
 			name = Models_and_Extensions;
 			sourceTree = "<group>";
@@ -426,6 +441,8 @@
 			files = (
 				F85DA8311BA6159800744EFD /* Main.storyboard in Resources */,
 				F85DA8361BA6159800744EFD /* LaunchScreen.xib in Resources */,
+				F84E64B21BE3D73E000B5CAD /* HCMFHeaderTableViewCell.xib in Resources */,
+				F84E64B61BE3E2FA000B5CAD /* HCMFHeaderCellView.xib in Resources */,
 				F85DA8331BA6159800744EFD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,8 +469,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85DA82E1BA6159800744EFD /* ViewController.swift in Sources */,
+				F84E64B81BE3E349000B5CAD /* HCMFHeaderCellView.swift in Sources */,
 				F8C449511BDD420F00A03404 /* HCMFDataInfo.swift in Sources */,
 				F8DAD7471BD98DCF008B1F3B /* HCMFCartTableViewCell.swift in Sources */,
+				F84E64AE1BE3BC5C000B5CAD /* HCMFListItems.swift in Sources */,
+				F84E64B11BE3D73E000B5CAD /* HCMFHeaderTableViewCell.swift in Sources */,
 				F8C449561BDDCA7D00A03404 /* HCMFGeneralParams.swift in Sources */,
 				F8D6BC221BDFD97E00C45F8C /* HCMFCartTableViewController.swift in Sources */,
 				F85E71D51BB895BE009927DD /* HCMFDetailViewViewController.swift in Sources */,

@@ -246,17 +246,17 @@
                                     <outletCollection property="gestureRecognizers" destination="bZg-om-wha" appends="YES" id="mbU-af-KL4"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
+                            <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="138" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
                                 <rect key="frame" x="0.0" y="122" width="600" height="429"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="429" id="cQ3-yK-WSq"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="138" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="138"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="nYm-7h-2fL" id="ff9-aW-PEW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="137"/>
