@@ -216,7 +216,7 @@
                                             <action selector="searchButtonPressed:" destination="cPW-AA-iRs" eventType="touchUpInside" id="DgN-tq-q6P"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your search" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-GP-uWS">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type and press search button" minimumFontSize="14" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-GP-uWS">
                                         <rect key="frame" x="8" y="14" width="516" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,6 +232,7 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="IAv-hg-dJw" secondAttribute="trailing" constant="22" id="Bre-bD-MB4"/>
                                     <constraint firstItem="IAv-hg-dJw" firstAttribute="centerY" secondItem="WUZ-Tv-o8P" secondAttribute="centerY" id="DoL-yg-BFb"/>
@@ -241,6 +242,9 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="i54-PQ-B76"/>
                                     <constraint firstItem="8PD-GP-uWS" firstAttribute="centerY" secondItem="WUZ-Tv-o8P" secondAttribute="centerY" id="tGt-rW-ygZ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bZg-om-wha" appends="YES" id="mbU-af-KL4"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
                                 <rect key="frame" x="0.0" y="122" width="600" height="429"/>
@@ -316,6 +320,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="WgU-R4-36N" firstAttribute="centerX" secondItem="zoP-hB-NuB" secondAttribute="centerX" id="8xe-zS-DWs"/>
                             <constraint firstItem="WUZ-Tv-o8P" firstAttribute="leading" secondItem="zoP-hB-NuB" secondAttribute="leadingMargin" constant="-20" id="A92-rA-P6B"/>
@@ -339,6 +344,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFm-nU-XmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bZg-om-wha">
+                    <connections>
+                        <action selector="searchViewTapped:" destination="cPW-AA-iRs" id="esC-aN-1ie"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1402" y="238"/>
         </scene>
@@ -457,6 +467,6 @@
         <image name="world90" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bx1-MP-fhM"/>
+        <segue reference="Tb9-wB-ZAc"/>
     </inferredMetricsTieBreakers>
 </document>

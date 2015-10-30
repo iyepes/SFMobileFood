@@ -64,7 +64,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    /// Asynchronous performs the data query then updates the UI
+    /// Asynchronous performs the full query then updates the UI
     func refresh (sender: AnyObject!) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -93,7 +93,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         refreshControl.endRefreshing()
     }
     
-    /// Asynchronous performs the data query then updates the UI
+    /// Asynchronous performs the search query then updates the UI
     func refreshSearch (sender: AnyObject!, searchTerm : String) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -134,6 +134,10 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         searchView.endEditing(true)
         self.loadingActivityIndicator.startAnimating()
         refreshSearch(self.tableView, searchTerm: searchTextField.text!)
+    }
+
+    @IBAction func searchViewTapped(sender: AnyObject) {
+        searchView.endEditing(true)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -181,6 +185,11 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     // Called when the UIKeyboardWillHideNotification is sent
     func keyboardWillBeHidden(sender: NSNotification) {
         
+    }
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        self.refresh(self)
+        return true
     }
     
     // MARK: - Navigation
