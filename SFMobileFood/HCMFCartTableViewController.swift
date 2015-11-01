@@ -102,7 +102,8 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             self.tableView.reloadData()
             self.searchButton.hidden = false
             self.searchTextField.hidden = false
-            self.searchView.endEditing(true)
+            self.searchTextField.text = ""
+            //self.searchView.endEditing(true)
             self.updateMap(animated: true)
         }
         refreshControl.endRefreshing()
@@ -132,7 +133,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             }
             // Update the UI
             self.tableView.reloadData()
-            self.searchView.endEditing(true)
+            //self.searchView.endEditing(true)
             self.updateMap(animated: true)
         }
     }

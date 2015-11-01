@@ -287,17 +287,17 @@
                                     <outletCollection property="gestureRecognizers" destination="bZg-om-wha" appends="YES" id="mbU-af-KL4"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
+                            <tableView clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="120" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-qk-0WY">
                                 <rect key="frame" x="0.0" y="122" width="600" height="429"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="429" id="cQ3-yK-WSq"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" id="2sL-Km-xbY" customClass="HCMFHeaderTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="120" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2sL-Km-xbY" id="sMV-D3-IS3">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
@@ -369,7 +369,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="44" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="170" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="240" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="nYm-7h-2fL" id="ff9-aW-PEW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
