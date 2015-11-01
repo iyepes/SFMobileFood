@@ -32,11 +32,17 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
         super.viewDidLoad()
         updateWithData(currentItem, animated: false)
     }
-    
+ 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(false)
         //cartFood.scrollEnabled = true
     }
+    
+    @IBAction func openTermsOfUse(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string:"http://hacemoscontactos.com/sf-mobile-food-terms-of-use/")!)
+    }
+    
+
     
     func updateWithData(currentItem: HCMFDataInfo, animated: Bool) {
         

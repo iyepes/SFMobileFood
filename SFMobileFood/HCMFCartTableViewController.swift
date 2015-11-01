@@ -166,16 +166,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     {
         let sectionNumber: Int = sender.tag
         self.collapsedStatus[sectionNumber] = !self.collapsedStatus[sectionNumber]
-        print(String(sender.tag))
-        
-    }
-    
-    func tableView(tableView: UITableView, canCollapseSection section: Int) -> Bool {
-        if section > 0 {
-            return true
-        } else {
-            return false
-        }
+        self.tableView.reloadData()
     }
     
 
@@ -187,7 +178,11 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return data.count
-        return listItems.items[section].count
+        if !collapsedStatus[section] {
+            return listItems.items[section].count
+        } else {
+            return 0
+        }
     }
     
     //MARK: - Cell creation
@@ -205,7 +200,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         cell.cartName.text = listItems.sections[section][0]
         cell.cartFood.text = listItems.sections[section][1]
         cell.expandButton.tag = section
-        cell.expandButton.selected = collapsedStatus[section]
+        cell.expandButton.selected = !collapsedStatus[section]
         cell.expandButton.addTarget(self, action: "headerExpandTapped:", forControlEvents: UIControlEvents.TouchUpInside)
         return cell
         
@@ -286,7 +281,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     func initCollapseStatus(numberOfSections: Int) -> [Bool]{
         var collapsedStatus: [Bool] = []
         for var index = 0; index < numberOfSections; ++index {
-            collapsedStatus = collapsedStatus + [false]
+            collapsedStatus = collapsedStatus + [true]
         }
         return collapsedStatus
     }

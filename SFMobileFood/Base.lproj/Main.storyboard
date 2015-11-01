@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="129" width="600" height="451"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-kO-Y49">
-                                        <rect key="frame" x="20" y="412" width="560" height="23"/>
+                                        <rect key="frame" x="20" y="356" width="560" height="23"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,11 +42,12 @@
                                         </variation>
                                     </mapView>
                                     <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-7o-nuG">
-                                        <rect key="frame" x="20" y="253" width="560" height="87"/>
+                                        <rect key="frame" x="20" y="253" width="560" height="33"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="87" id="2P9-3Y-qms"/>
+                                            <constraint firstAttribute="height" priority="250" constant="33" id="oHt-dA-czL"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Food allowed.">
@@ -59,33 +60,52 @@
                                             </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2P9-3Y-qms"/>
+                                            </mask>
+                                        </variation>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFj-Ts-gA7">
-                                        <rect key="frame" x="20" y="348" width="560" height="23"/>
+                                        <rect key="frame" x="20" y="294" width="560" height="23"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PD-cY-2UF">
-                                        <rect key="frame" x="20" y="380" width="560" height="23"/>
+                                        <rect key="frame" x="20" y="325" width="560" height="23"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2d-Qa-OOm">
+                                        <rect key="frame" x="268" y="387" width="65" height="26"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
+                                        <state key="normal" title="Terms of Use"/>
+                                        <connections>
+                                            <action selector="openTermsOfUse:" destination="VNz-t9-Rty" eventType="touchUpInside" id="gMQ-Ve-vR1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="3PD-cY-2UF" firstAttribute="top" secondItem="yFj-Ts-gA7" secondAttribute="bottom" constant="8" id="1vE-QT-18i"/>
                                     <constraint firstItem="3PD-cY-2UF" firstAttribute="leading" secondItem="yFj-Ts-gA7" secondAttribute="leading" id="2c1-Va-U2D"/>
+                                    <constraint firstItem="B2d-Qa-OOm" firstAttribute="top" secondItem="sh0-kO-Y49" secondAttribute="bottom" constant="8" id="3kR-oR-s4u"/>
+                                    <constraint firstItem="yFj-Ts-gA7" firstAttribute="top" secondItem="x6S-7o-nuG" secondAttribute="bottom" constant="8" id="4Fv-iY-k07"/>
                                     <constraint firstItem="x6S-7o-nuG" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="8" symbolic="YES" id="5G9-Lc-b2S"/>
                                     <constraint firstItem="yFj-Ts-gA7" firstAttribute="trailing" secondItem="cCD-JN-Fbd" secondAttribute="trailing" id="6Re-ut-5WX"/>
+                                    <constraint firstItem="sh0-kO-Y49" firstAttribute="top" secondItem="3PD-cY-2UF" secondAttribute="bottom" constant="8" id="7hg-AU-AIL"/>
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="centerX" secondItem="Non-9M-sas" secondAttribute="centerX" id="9BY-hU-7zq"/>
                                     <constraint firstItem="3PD-cY-2UF" firstAttribute="trailing" secondItem="yFj-Ts-gA7" secondAttribute="trailing" id="9PL-xp-GPa"/>
                                     <constraint firstItem="sh0-kO-Y49" firstAttribute="leading" secondItem="cCD-JN-Fbd" secondAttribute="leading" id="AYO-dw-Ydk"/>
                                     <constraint firstItem="cCD-JN-Fbd" firstAttribute="trailing" secondItem="x6S-7o-nuG" secondAttribute="trailing" id="Ar8-8u-ZKi"/>
+                                    <constraint firstItem="B2d-Qa-OOm" firstAttribute="centerX" secondItem="Non-9M-sas" secondAttribute="centerX" id="HoV-iY-cM0"/>
                                     <constraint firstAttribute="bottom" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="206" id="KNy-kr-ynA"/>
                                     <constraint firstItem="yFj-Ts-gA7" firstAttribute="top" secondItem="x6S-7o-nuG" secondAttribute="bottom" constant="8" id="L3V-zc-opW"/>
                                     <constraint firstItem="sh0-kO-Y49" firstAttribute="leading" secondItem="yFj-Ts-gA7" secondAttribute="leading" id="LB1-3D-6vn"/>
@@ -107,6 +127,7 @@
                                     <constraint firstItem="yFj-Ts-gA7" firstAttribute="top" secondItem="cCD-JN-Fbd" secondAttribute="bottom" constant="45" id="iFd-99-anI"/>
                                     <constraint firstAttribute="bottom" secondItem="sh0-kO-Y49" secondAttribute="bottom" constant="48" id="lT3-GK-1Ne"/>
                                     <constraint firstItem="yFj-Ts-gA7" firstAttribute="leading" secondItem="cCD-JN-Fbd" secondAttribute="leading" id="o3z-Fy-SPu"/>
+                                    <constraint firstAttribute="bottom" secondItem="sh0-kO-Y49" secondAttribute="bottom" constant="68" id="obX-wt-akS"/>
                                     <constraint firstItem="sh0-kO-Y49" firstAttribute="leading" secondItem="x6S-7o-nuG" secondAttribute="leading" id="rl1-vP-CjD"/>
                                     <constraint firstItem="x6S-7o-nuG" firstAttribute="top" secondItem="Non-9M-sas" secondAttribute="top" constant="253" id="rlD-GJ-Ahs"/>
                                     <constraint firstItem="sh0-kO-Y49" firstAttribute="trailing" secondItem="yFj-Ts-gA7" secondAttribute="trailing" id="rqO-Oz-rEa"/>
@@ -126,12 +147,16 @@
                                         <exclude reference="hgO-P4-2KE"/>
                                         <exclude reference="rlD-GJ-Ahs"/>
                                         <exclude reference="6Re-ut-5WX"/>
+                                        <exclude reference="L3V-zc-opW"/>
                                         <exclude reference="iFd-99-anI"/>
                                         <exclude reference="o3z-Fy-SPu"/>
+                                        <exclude reference="d9v-Fw-kFq"/>
                                         <exclude reference="ftn-vn-uKW"/>
                                         <exclude reference="AYO-dw-Ydk"/>
+                                        <exclude reference="XVc-C8-21H"/>
                                         <exclude reference="bcY-vx-RNT"/>
                                         <exclude reference="gBS-y3-XsI"/>
+                                        <exclude reference="lT3-GK-1Ne"/>
                                         <exclude reference="yC2-kc-djI"/>
                                     </mask>
                                 </variation>
@@ -205,6 +230,7 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="27z-96-BAz"/>
+                                            <constraint firstAttribute="width" constant="32" id="5q4-lG-fcE"/>
                                             <constraint firstAttribute="height" constant="32" id="CHl-Pl-79S"/>
                                         </constraints>
                                         <state key="normal" image="magnifier13-white"/>
@@ -212,6 +238,12 @@
                                         <state key="selected" image="magnifier13-deepblue"/>
                                         <state key="highlighted" image="magnifier13-deepblue"/>
                                         <state key="focused" image="magnifier13-white"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="27z-96-BAz"/>
+                                                <exclude reference="CHl-Pl-79S"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="cPW-AA-iRs" eventType="touchUpInside" id="DgN-tq-q6P"/>
                                         </connections>
@@ -221,9 +253,6 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" priority="250" constant="516" id="VCX-vg-zl3"/>
-                                        </constraints>
                                         <color key="textColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -232,14 +261,27 @@
                                 <animations/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="IAv-hg-dJw" firstAttribute="leading" secondItem="8PD-GP-uWS" secondAttribute="trailing" constant="22" id="2gT-yP-9WL"/>
+                                    <constraint firstItem="8PD-GP-uWS" firstAttribute="top" secondItem="WUZ-Tv-o8P" secondAttribute="top" constant="14" id="7Ej-wN-qLn"/>
                                     <constraint firstAttribute="trailing" secondItem="IAv-hg-dJw" secondAttribute="trailing" constant="22" id="Bre-bD-MB4"/>
                                     <constraint firstItem="IAv-hg-dJw" firstAttribute="centerY" secondItem="WUZ-Tv-o8P" secondAttribute="centerY" id="DoL-yg-BFb"/>
+                                    <constraint firstItem="IAv-hg-dJw" firstAttribute="centerY" secondItem="8PD-GP-uWS" secondAttribute="centerY" id="Rwg-lJ-gRD"/>
                                     <constraint firstAttribute="height" constant="58" id="T65-yl-yTO"/>
                                     <constraint firstItem="8PD-GP-uWS" firstAttribute="leading" secondItem="WUZ-Tv-o8P" secondAttribute="leading" constant="8" id="UP8-y4-ZA0"/>
+                                    <constraint firstItem="8PD-GP-uWS" firstAttribute="leading" secondItem="WUZ-Tv-o8P" secondAttribute="leading" constant="8" id="WXq-PD-k1t"/>
                                     <constraint firstItem="IAv-hg-dJw" firstAttribute="leading" secondItem="8PD-GP-uWS" secondAttribute="trailing" constant="22" id="g3B-6V-Sgb"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="i54-PQ-B76"/>
+                                    <constraint firstAttribute="trailing" secondItem="IAv-hg-dJw" secondAttribute="trailing" constant="22" id="pB9-tz-qSy"/>
                                     <constraint firstItem="8PD-GP-uWS" firstAttribute="centerY" secondItem="WUZ-Tv-o8P" secondAttribute="centerY" id="tGt-rW-ygZ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UP8-y4-ZA0"/>
+                                        <exclude reference="tGt-rW-ygZ"/>
+                                        <exclude reference="Bre-bD-MB4"/>
+                                        <exclude reference="DoL-yg-BFb"/>
+                                        <exclude reference="g3B-6V-Sgb"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="bZg-om-wha" appends="YES" id="mbU-af-KL4"/>
                                 </connections>
@@ -253,7 +295,7 @@
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="120" id="2sL-Km-xbY" customClass="HCMFHeaderTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" id="2sL-Km-xbY" customClass="HCMFHeaderTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2sL-Km-xbY" id="sMV-D3-IS3">
@@ -271,7 +313,6 @@
                                                     <rect key="frame" x="8" y="43" width="584" height="67"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="1z4-P5-Gyc"/>
                                                         <constraint firstAttribute="height" constant="67" id="oLo-Uj-fmk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
@@ -326,22 +367,22 @@
                                             <outlet property="headerContentView" destination="sMV-D3-IS3" id="7FE-GC-HS4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="44" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="170" width="600" height="44"/>
+                                    <tableViewCell opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="170" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="nYm-7h-2fL" id="ff9-aW-PEW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-f2-Qab">
-                                                    <rect key="frame" x="28" y="8" width="533" height="27"/>
+                                                    <rect key="frame" x="28" y="8" width="533" height="103"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-0b-XVV">
-                                                    <rect key="frame" x="575" y="11" width="17" height="21"/>
+                                                    <rect key="frame" x="575" y="49" width="17" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="17" id="GfF-Ic-ZQM"/>
@@ -395,8 +436,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="WUZ-Tv-o8P" secondAttribute="trailing" constant="-20" id="Shc-mx-yqQ"/>
                             <constraint firstItem="WUZ-Tv-o8P" firstAttribute="top" secondItem="Sl0-oC-QqY" secondAttribute="bottom" id="eej-kN-iOi"/>
                             <constraint firstItem="WgU-R4-36N" firstAttribute="centerY" secondItem="zoP-hB-NuB" secondAttribute="centerY" id="erH-za-dBS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WUZ-Tv-o8P" secondAttribute="trailing" constant="-20" id="fdG-5U-zE0"/>
+                            <constraint firstItem="WUZ-Tv-o8P" firstAttribute="top" secondItem="Sl0-oC-QqY" secondAttribute="bottom" id="qjY-XB-Nm8"/>
                             <constraint firstItem="0VO-qk-0WY" firstAttribute="leading" secondItem="zoP-hB-NuB" secondAttribute="leadingMargin" constant="-20" id="s1w-9U-df8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Shc-mx-yqQ"/>
+                                <exclude reference="eej-kN-iOi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Mobile Food Facilities" id="OmF-f1-K97"/>
                     <connections>
@@ -500,10 +549,10 @@
             </objects>
             <point key="canvasLocation" x="-459" y="478"/>
         </scene>
-        <!--Mobile Food Business-->
+        <!--Mobile Food List-->
         <scene sceneID="EdI-gb-cWJ">
             <objects>
-                <navigationController title="Mobile Food Business" automaticallyAdjustsScrollViewInsets="NO" id="e1q-u4-d9N" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e1q-u4-d9N" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mobile Food List" image="cart-icon" id="sEE-Wi-twr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h5j-mF-VQd">
