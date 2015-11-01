@@ -102,6 +102,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             self.tableView.reloadData()
             self.searchButton.hidden = false
             self.searchTextField.hidden = false
+            self.searchView.endEditing(true)
             self.updateMap(animated: true)
         }
         refreshControl.endRefreshing()
@@ -131,6 +132,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             }
             // Update the UI
             self.tableView.reloadData()
+            self.searchView.endEditing(true)
             self.updateMap(animated: true)
         }
     }
@@ -217,8 +219,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
         //let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         let cellData = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
-        //c.cartName.text = cellData.fullName
-        //c.cartFood.text = cellData.foodType
+        cell.backgroundColor = self.currentParams.appColor
         cell.cartAddress.text = cellData.street
         return cell
     }
