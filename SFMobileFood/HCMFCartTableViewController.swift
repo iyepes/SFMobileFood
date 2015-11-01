@@ -24,6 +24,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
     let currentParams: HCMFGeneralParams = HCMFGeneralParams()
     var listItems: HCMFListItems = HCMFListItems()
+    var collapsedStatus: [Bool] = []
 
     //Open Data URL and Registered access tokens http://dev.socrata.com/register
     //San Francisco Mobile Food Facility Permit
@@ -59,40 +60,16 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         searchTextField.hidden = true
         // Auto-refresh
         refresh(self)
+        
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        //Suscribe to keyboard notifications
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    
-    func updateListItems (data: [[String: AnyObject]]!) -> HCMFListItems {
-        let listItems: HCMFListItems = HCMFListItems()
-        
-        if data.count > 0 {
-            var currentName: String = ""
-            var sectionHeader:[String] = []
-            var sectionData: [[String: AnyObject]] = []
-            for item in data {
-                let itemData = HCMFDataInfo(item: item) as HCMFDataInfo
-                if (itemData.fullName == currentName){
-                    sectionData = sectionData + [item]
-                } else if (currentName == "") {
-                    currentName = itemData.fullName
-                    sectionHeader = [itemData.fullName , itemData.foodType]
-                    sectionData = [item]
-                } else {
-                    currentName = itemData.fullName
-                    listItems.addSection(sectionHeader, item: sectionData)
-                    sectionHeader = [itemData.fullName , itemData.foodType]
-                    sectionData = [item]
-                }
-            }
-            listItems.addSection(sectionHeader, item: sectionData)
-        }
-        return listItems
-    }
+    //MARK: - Data source update
     
     /// Asynchronous performs the full query then updates the UI
     func refresh (sender: AnyObject!) {
@@ -106,6 +83,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
                 // Update our data
                 self.data = data
                 self.listItems = self.updateListItems(data)
+                self.collapsedStatus = self.initCollapseStatus(self.listItems.sections.count)
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
@@ -136,6 +114,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
                 // Update our data
                 self.data = data
                 self.listItems = self.updateListItems(data)
+                self.collapsedStatus = self.initCollapseStatus(self.listItems.sections.count)
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
@@ -162,6 +141,8 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
 
+    //MARK: - Search actions
+    
     @IBAction func searchButtonPressed(sender: AnyObject) {
         searchView.endEditing(true)
         self.loadingActivityIndicator.startAnimating()
@@ -172,6 +153,8 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         searchView.endEditing(true)
     }
     
+    //MARK: - Cell actions
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         searchView.endEditing(true)
         //currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
@@ -179,8 +162,12 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         performSegueWithIdentifier("OpenCartDetails", sender: self)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return listItems.sections.count
+    func headerExpandTapped(sender: UIButton!)
+    {
+        let sectionNumber: Int = sender.tag
+        self.collapsedStatus[sectionNumber] = !self.collapsedStatus[sectionNumber]
+        print(String(sender.tag))
+        
     }
     
     func tableView(tableView: UITableView, canCollapseSection section: Int) -> Bool {
@@ -191,8 +178,11 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return listItems.sections[section][0]
+
+    //MARK: - Number of elements
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return listItems.sections.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -200,13 +190,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         return listItems.items[section].count
     }
     
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let c = tableView.dequeueReusableCellWithIdentifier(headerCellId) as! HCMFHeaderTableViewCell!
-        c.cartName.text = listItems.sections[section][0]
-        c.cartFood.text = listItems.sections[section][1]
-        return c.contentView
-    }
+    //MARK: - Cell creation
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 120
@@ -216,20 +200,31 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         return 44
     }
     
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier(headerCellId) as! HCMFHeaderTableViewCell!
+        cell.cartName.text = listItems.sections[section][0]
+        cell.cartFood.text = listItems.sections[section][1]
+        cell.expandButton.tag = section
+        cell.expandButton.selected = collapsedStatus[section]
+        cell.expandButton.addTarget(self, action: "headerExpandTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        return cell
+        
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let c = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
         //let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         let cellData = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
         //c.cartName.text = cellData.fullName
         //c.cartFood.text = cellData.foodType
-        c.cartAddress.text = cellData.street
-        return c
+        cell.cartAddress.text = cellData.street
+        return cell
     }
     
     //MARK: - Keyboard Management Methods
     
-    // Call this method somewhere in your view controller setup code.
+    //Registering for notifications
     func registerForKeyboardNotifications() {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self,
@@ -252,9 +247,48 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    //reload data when search field is cleared
     func textFieldShouldClear(textField: UITextField) -> Bool {
         self.refresh(self)
         return true
+    }
+    
+    // MARK: - Data preparation for display
+    
+    // Prepare data to be shown in sections
+    func updateListItems (data: [[String: AnyObject]]!) -> HCMFListItems {
+        let listItems: HCMFListItems = HCMFListItems()
+        
+        if data.count > 0 {
+            var currentName: String = ""
+            var sectionHeader:[String] = []
+            var sectionData: [[String: AnyObject]] = []
+            for item in data {
+                let itemData = HCMFDataInfo(item: item) as HCMFDataInfo
+                if (itemData.fullName == currentName){
+                    sectionData = sectionData + [item]
+                } else if (currentName == "") {
+                    currentName = itemData.fullName
+                    sectionHeader = [itemData.fullName , itemData.foodType]
+                    sectionData = [item]
+                } else {
+                    currentName = itemData.fullName
+                    listItems.addSection(sectionHeader, item: sectionData)
+                    sectionHeader = [itemData.fullName , itemData.foodType]
+                    sectionData = [item]
+                }
+            }
+            listItems.addSection(sectionHeader, item: sectionData)
+        }
+        return listItems
+    }
+    
+    func initCollapseStatus(numberOfSections: Int) -> [Bool]{
+        var collapsedStatus: [Bool] = []
+        for var index = 0; index < numberOfSections; ++index {
+            collapsedStatus = collapsedStatus + [false]
+        }
+        return collapsedStatus
     }
     
     // MARK: - Navigation

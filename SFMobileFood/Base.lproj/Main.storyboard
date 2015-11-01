@@ -261,7 +261,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCq-6r-69u">
-                                                    <rect key="frame" x="68" y="8" width="524" height="23"/>
+                                                    <rect key="frame" x="8" y="8" width="535" height="23"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -278,50 +278,52 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand38-blue" highlightedImage="expand38-white" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-Zx-HPr">
-                                                    <rect key="frame" x="8" y="9" width="52" height="32"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-kL-R4U">
+                                                    <rect key="frame" x="560" y="10" width="32" height="20"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="9bV-wX-4gI"/>
-                                                        <constraint firstAttribute="height" constant="32" id="wB9-fH-yov"/>
+                                                        <constraint firstAttribute="height" constant="20" id="7sE-dk-dW2"/>
+                                                        <constraint firstAttribute="width" constant="32" id="rup-wA-QvU"/>
                                                     </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand39-blue" highlightedImage="expand39-white" translatesAutoresizingMaskIntoConstraints="NO" id="1RI-zi-Fdb">
-                                                    <rect key="frame" x="8" y="8" width="52" height="32"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="2RL-1J-0PN"/>
-                                                        <constraint firstAttribute="height" constant="32" id="PYE-Cu-Lav"/>
-                                                    </constraints>
-                                                </imageView>
+                                                    <state key="normal" image="expand38-blue"/>
+                                                    <state key="disabled" image="expand38-gray"/>
+                                                    <state key="selected" image="expand39-blue"/>
+                                                    <state key="highlighted" image="expand38-white"/>
+                                                    <connections>
+                                                        <action selector="toggleOpen:" destination="2sL-Km-xbY" eventType="touchUpInside" id="B7E-Pv-6IO"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.027730690549999999" green="0.1576762159" blue="0.23054388419999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="pCq-6r-69u" firstAttribute="leading" secondItem="VdW-Zx-HPr" secondAttribute="trailing" constant="8" id="2PO-eV-rzR"/>
-                                                <constraint firstItem="1RI-zi-Fdb" firstAttribute="top" secondItem="sMV-D3-IS3" secondAttribute="topMargin" id="PV7-do-npG"/>
-                                                <constraint firstItem="1RI-zi-Fdb" firstAttribute="leading" secondItem="sMV-D3-IS3" secondAttribute="leadingMargin" id="VP4-K3-eph"/>
+                                                <constraint firstAttribute="topMargin" secondItem="pCq-6r-69u" secondAttribute="top" id="20X-Fy-jJG"/>
+                                                <constraint firstItem="cK3-kL-R4U" firstAttribute="leading" secondItem="pCq-6r-69u" secondAttribute="trailing" constant="17" id="OqO-FE-4Qr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cK3-kL-R4U" secondAttribute="trailing" id="SlN-Xl-Kvj"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="pCq-6r-69u" secondAttribute="leading" id="Z2u-Ff-mky"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0I9-7b-aQF" secondAttribute="trailing" id="adg-EK-JhB"/>
                                                 <constraint firstAttribute="topMargin" secondItem="pCq-6r-69u" secondAttribute="top" id="eKf-qb-hgZ"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="0I9-7b-aQF" secondAttribute="leading" id="kDQ-xd-TSU"/>
                                                 <constraint firstItem="0I9-7b-aQF" firstAttribute="top" secondItem="pCq-6r-69u" secondAttribute="bottom" constant="12" id="mu9-21-Spb"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="VdW-Zx-HPr" secondAttribute="leading" id="pQl-RS-huU"/>
-                                                <constraint firstItem="VdW-Zx-HPr" firstAttribute="top" secondItem="sMV-D3-IS3" secondAttribute="topMargin" constant="1" id="pmM-Zv-129"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pCq-6r-69u" secondAttribute="trailing" id="uOf-lx-gJa"/>
+                                                <constraint firstItem="cK3-kL-R4U" firstAttribute="centerY" secondItem="pCq-6r-69u" secondAttribute="centerY" id="v31-Tp-Uz9"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="pCq-6r-69u" secondAttribute="leading" id="yyk-7f-w8F"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Z2u-Ff-mky"/>
+                                                    <exclude reference="eKf-qb-hgZ"/>
+                                                    <exclude reference="uOf-lx-gJa"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="cartFood" destination="0I9-7b-aQF" id="iiz-Xm-rQG"/>
                                             <outlet property="cartName" destination="pCq-6r-69u" id="DfN-BB-n2f"/>
-                                            <outlet property="collapseArrow" destination="1RI-zi-Fdb" id="sDA-rL-Vso"/>
-                                            <outlet property="expandArrow" destination="VdW-Zx-HPr" id="CS7-fW-e51"/>
+                                            <outlet property="expandButton" destination="cK3-kL-R4U" id="sLC-Ng-BDw"/>
+                                            <outlet property="headerContentView" destination="sMV-D3-IS3" id="7FE-GC-HS4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="44" id="nYm-7h-2fL" customClass="HCMFCartTableViewCell" customModule="sfmobilefood" customModuleProvider="target">
@@ -332,19 +334,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-f2-Qab">
-                                                    <rect key="frame" x="28" y="8" width="564" height="23"/>
+                                                    <rect key="frame" x="28" y="8" width="533" height="27"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-0b-XVV">
+                                                    <rect key="frame" x="575" y="11" width="17" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="17" id="GfF-Ic-ZQM"/>
+                                                        <constraint firstAttribute="height" constant="21" id="pBj-zW-Rzb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="W3Y-f2-Qab" firstAttribute="centerY" secondItem="ff9-aW-PEW" secondAttribute="centerY" id="8Xh-DS-4V8"/>
+                                                <constraint firstItem="3qp-0b-XVV" firstAttribute="leading" secondItem="W3Y-f2-Qab" secondAttribute="trailing" constant="14" id="AXZ-7l-9p1"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="W3Y-f2-Qab" secondAttribute="leading" constant="-20" id="AtA-A2-xEK"/>
                                                 <constraint firstAttribute="topMargin" secondItem="W3Y-f2-Qab" secondAttribute="top" id="Fe5-BK-g8L"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="W3Y-f2-Qab" secondAttribute="trailing" id="oFS-H0-ZPm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3qp-0b-XVV" secondAttribute="trailing" id="uQ9-7g-mAF"/>
+                                                <constraint firstItem="3qp-0b-XVV" firstAttribute="centerY" secondItem="ff9-aW-PEW" secondAttribute="centerY" id="zId-80-lOB"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="oFS-H0-ZPm"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -506,9 +528,9 @@
     <resources>
         <image name="cart-icon" width="30" height="30"/>
         <image name="expand38-blue" width="52" height="32"/>
+        <image name="expand38-gray" width="52" height="32"/>
         <image name="expand38-white" width="52" height="32"/>
         <image name="expand39-blue" width="52" height="32"/>
-        <image name="expand39-white" width="52" height="32"/>
         <image name="magnifier13-deepblue" width="32" height="32"/>
         <image name="magnifier13-white" width="32" height="32"/>
         <image name="world90" width="32" height="32"/>
