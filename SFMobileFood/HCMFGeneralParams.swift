@@ -6,7 +6,7 @@
 //  Copyright © 2015 Hacemos Contactos. All rights reserved.
 //
 //  extension UIColor code modified from yannickl https://gist.github.com/yannickl/16f0ed38f0698d9a8ae7
-//  extencion UIImage code modified from gotnull http://stackoverflow.com/questions/19274789/how-can-i-change-image-tintcolor-in-ios-and-watchkit/24545102#24545102
+//  extension UIImage code modified from gotnull http://stackoverflow.com/questions/19274789/how-can-i-change-image-tintcolor-in-ios-and-watchkit/24545102#24545102
 
 import Foundation
 import UIKit

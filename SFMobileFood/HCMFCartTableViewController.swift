@@ -103,7 +103,6 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             self.searchButton.hidden = false
             self.searchTextField.hidden = false
             self.searchTextField.text = ""
-            //self.searchView.endEditing(true)
             self.updateMap(animated: true)
         }
         refreshControl.endRefreshing()
@@ -133,7 +132,6 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
             }
             // Update the UI
             self.tableView.reloadData()
-            //self.searchView.endEditing(true)
             self.updateMap(animated: true)
         }
     }
@@ -166,7 +164,6 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         searchView.endEditing(true)
-        //currentItem = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         currentItem = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
         performSegueWithIdentifier("OpenCartDetails", sender: self)
     }
@@ -186,7 +183,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return data.count
+        
         if !collapsedStatus[section] {
             return listItems.items[section].count
         } else {
@@ -218,7 +215,6 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCMFCartTableViewCell!
-        //let cellData = HCMFDataInfo(item: data[indexPath.row]) as HCMFDataInfo
         let cellData = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
         cell.backgroundColor = self.currentParams.appColor
         cell.cartAddress.text = cellData.street

@@ -66,8 +66,6 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
             lat = currentItem.lat
             lon = currentItem.lon
             let a = MKPointAnnotation()
-            //a.title = currentItem.fullName
-            //a.subtitle = currentItem.foodType
             a.coordinate = CLLocationCoordinate2D (latitude: lat, longitude: lon)
             anns.append(a)
         }
@@ -80,7 +78,7 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
             let r = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: lat*w, longitude: lon*w), 2000, 2000)
             DetailsMapView.setRegion(r, animated: animated)
         } else {
-            let alert = UIAlertView(title: "No location", message: "This mobile food business has no location info available, see address.", delegate: nil, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "No location", message: "This mobile food facility has no location info available, please see address.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
         
         }
