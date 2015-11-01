@@ -14,6 +14,8 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var loadingDataMessage: UILabel!
+    
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var searchView: UIView!
@@ -71,7 +73,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     //MARK: - Data source update
     
-    /// Asynchronous performs the full query then updates the UI
+    /// Performs the full query then updates the UI
     func refresh (sender: AnyObject!) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -84,11 +86,14 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
                 self.data = data
                 self.listItems = self.updateListItems(data)
                 self.collapsedStatus = self.initCollapseStatus(self.listItems.sections.count)
+                self.loadingDataMessage.hidden = true
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
-                let alert = UIAlertView(title: "Error Refreshing", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
+                // for debugging err.userInfo.description or err.userInfo.debugDescription
+                let alert = UIAlertView(title: "No data available", message: "Please verify your internet connection, try again later pressing the search button.", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
+                self.loadingDataMessage.hidden = true
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             }
@@ -102,7 +107,7 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
         refreshControl.endRefreshing()
     }
     
-    /// Asynchronous performs the search query then updates the UI
+    /// Performs the search query then updates the UI
     func refreshSearch (sender: AnyObject!, searchTerm : String) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -118,7 +123,8 @@ class HCMFCartTableViewController: UIViewController, UITableViewDelegate, UITabl
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             case .Error (let err):
-                let alert = UIAlertView(title: "Error Refreshing, try again later.", message: err.userInfo.debugDescription, delegate: nil, cancelButtonTitle: "OK")
+                // for debugging err.userInfo.description or err.userInfo.debugDescription
+                let alert = UIAlertView(title: "No data available", message: "Please verify your internet connection, try again later pressing the search button.", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()
                 self.loadingActivityIndicator.stopAnimating()
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false

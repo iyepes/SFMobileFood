@@ -17,13 +17,13 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
     
     @IBOutlet weak var cartFood: UITextView!
     
-    @IBOutlet weak var cartSchedule: UILabel!
-    
     @IBOutlet weak var cartAddress: UILabel!
     
     @IBOutlet weak var generalScrollView: UIScrollView!
     
     @IBOutlet weak var cartType: UILabel!
+    
+    @IBOutlet weak var cartOpenSchedule: UITextView!
     
     var currentItem: HCMFDataInfo = HCMFDataInfo(item: [:])
     var currentParams: HCMFGeneralParams = HCMFGeneralParams()
@@ -31,11 +31,6 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateWithData(currentItem, animated: false)
-    }
- 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(false)
-        //cartFood.scrollEnabled = true
     }
     
     @IBAction func openTermsOfUse(sender: AnyObject) {
@@ -57,8 +52,9 @@ class HCMFDetailViewViewController: UIViewController,MKMapViewDelegate {
         // disable scroll to force growth
         cartFood.scrollEnabled = false
         cartFood.text = currentItem.foodType
+        cartOpenSchedule.scrollEnabled = false
+        cartOpenSchedule.text = currentItem.schedule
         cartAddress.text = currentItem.street
-        cartSchedule.text = currentItem.schedule
         cartType.text = currentItem.facilityType
 
         // Create annotations for the data
