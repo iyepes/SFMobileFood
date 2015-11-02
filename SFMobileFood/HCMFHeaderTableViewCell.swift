@@ -20,9 +20,14 @@ class HCMFHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("doNothing:"))
+        self.addGestureRecognizer(tapGesture)
     }
 
+    func doNothing(sender: AnyObject) {
+        //Catch other taps over header cell different than expand button
+    }
+    
     @IBAction func toggleOpen(sender: AnyObject) {
         self.toggleOpenWithUserAction(true)
     }
