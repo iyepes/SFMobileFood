@@ -10,7 +10,7 @@ This first version was created over SODA Swift Beta SDK example https://github.c
 
 ## Demo
 
-![SFMobileFood Demo](https://dl.dropboxusercontent.com/u/15652960/github/SFMobileFood.gif)
+![SFMobileFood Demo](https://github.com/iyepes/SFMobileFood/blob/master/SFMobileFood.gif)
 
 ## Icon Attribution
 
